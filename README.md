@@ -1,13 +1,15 @@
 .logo-container {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: center;     /* Logo فالوسط */
+  margin: 10px auto;      /* مسافة بسيطة من الأعلى والأسفل */
+  padding: 10px 0;        /* مسافة إضافية صغيرة للراحة */
 }
 
 .logo {
-  max-width: 200px;
-  height: auto;
+  max-width: 150px;       /* حجم مناسب للصفحة */
+  height: auto;            /* يحافظ على النسبة */
+  display: inline-block;   /* باش يبقى متناسق وسط الصفحة */
 }
+
 
 <!DOCTYPE html>
 <html lang="ar">
