@@ -1,3 +1,14 @@
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+}
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
