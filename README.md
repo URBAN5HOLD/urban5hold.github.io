@@ -122,7 +122,8 @@ body {
 <!-- ===== PRODUCT ===== -->
 <section class="product">
 
-  <img src="images/gel1.jpg" alt="جيل تثبيت الشعر">
+ <img src="gel.jpg" alt="جيل تثبيت الشعر">
+
 
   <div class="product-content">
     <h2>جيل تثبيت الشعر الطبيعي</h2>
