@@ -140,7 +140,7 @@
 
       <div class="product-card">
         <!-- بدّل الصورة بصورة المنتوج -->
-<img src="images/gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
+<img src="gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
 
         <div class="title">جيل تثبيت الشعر</div>
 
@@ -157,7 +157,7 @@
 
         <div class="price">35 درهم</div>
 
-        <a class="btn" href="https://wa.me/212600000000?text=سلام، بغيت نطلب Urban Hold" target="_blank">
+        <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب Urban Hold" target="_blank">
           اطلب الآن عبر واتساب
         </a>
       </div>
