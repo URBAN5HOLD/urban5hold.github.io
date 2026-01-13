@@ -164,8 +164,3 @@
 
       <div class="note">توصيل لجميع المدن المغربية</div>
 
-    </div>
-  </div>
-</body>
-</html>
-
