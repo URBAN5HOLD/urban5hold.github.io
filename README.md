@@ -94,7 +94,7 @@
 
     <div class="price">الثمن: 35 درهم</div>
 
-    <a class="btn" href="https://wa.me/212600000000?text=سلام، بغيت نطلب جيل تثبيت الشعر" target="_blank">
+    <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب جيل تثبيت الشعر" target="_blank">
       اطلب عبر واتساب
     </a>
 
