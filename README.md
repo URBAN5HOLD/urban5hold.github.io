@@ -75,7 +75,7 @@
 <body>
   <div class="container">
 
-    <div class="logo">BRAND NAME</div>
+    <div class="logo">Black Grip</div>
 
     <!-- عوض الرابط بصورة المنتوج ديالك -->
     <img src="https://via.placeholder.com/400x400" alt="جيل تثبيت الشعر" class="product-image" />
