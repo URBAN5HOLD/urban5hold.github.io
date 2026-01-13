@@ -140,7 +140,7 @@
 
       <div class="product-card">
         <!-- بدّل الصورة بصورة المنتوج -->
-<img src="images/gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
+<img gel.jpg="images/gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
 
         <div class="title">جيل تثبيت الشعر</div>
 
