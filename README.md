@@ -144,7 +144,6 @@
 
   <div class="brand">Urban Hold</div>
   <div class="subtitle">ثبات راقي. حضور قوي.</div>
-
   <!-- المنتج الأول -->
   <div class="product-card">
     <img src="gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
