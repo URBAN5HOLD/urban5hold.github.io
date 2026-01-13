@@ -158,7 +158,7 @@
         <div class="price">35 درهم</div>
 
         <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب Urban Hold" target="_blank">
-          اطلب الآن عبر واتساب
+        
         </a>
       </div>
 اطلب الآن عبر واتساب
@@ -196,7 +196,7 @@
       <ul class="features">
         <li>✔ تشكيل سهل ومرن</li>
         <li>✔ لمسة لامعة طبيعية</li>
-        <li>✔ مناسب لجميع أنواع الشعر</li>
+        <li>✔ مثالي للشعر القصير والطويل</li>
       </ul>
       <div class="price">45 درهم</div>
       <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب واكس الشعر" target="_blank">
