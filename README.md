@@ -187,7 +187,7 @@ footer{
     <div class="card-row">
 
       <div class="card card-small">
-        <img src="produit2.jpg" alt="Produit 2">
+        <img src="spray.jpg" alt="Produit 2">
         <a href="https://wa.me/212691444558" target="_blank"></a>
         <div class="card-content">
           <h3>Produit II</h3>
