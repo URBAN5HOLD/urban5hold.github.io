@@ -15,7 +15,7 @@
       font-family: 'Inter', sans-serif;
       direction: rtl;
       color: #111;
-      /* خلفية جميلة */
+
       background: linear-gradient(180deg, rgba(58,42,31,0.85), rgba(245,240,230,0.95)), 
                   url('background.jpg') center/cover no-repeat;
       min-height: 100vh;
