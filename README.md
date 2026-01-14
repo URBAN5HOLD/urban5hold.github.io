@@ -3,142 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <title>Brand Officiel</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(
     180deg,
-    rgba(28,23,20,0.95),
-    rgba(245,240,230,0.95)
+    #2b1e14 0%,
+    #4a3525 45%,
+    #f5f0e6 100%
   );
-  color: #1c1714;
+  color:#1e1a17;
 }
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero-content {
-  max-width: 700px;
-  animation: fadeDown 1.5s ease forwards;
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:64px;
+  color:#f5f0e6;
+  margin-bottom:20px;
 }
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #f5f0e6;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.85;
-  margin-bottom: 40px;
-  color: #e0d8c8;
-}
-
-.hero a {
-  text-decoration: none;
-  padding: 14px 40px;
-  border: 1px solid #e0d8c8;
-  color: #e0d8c8;
-  font-size: 14px;
-  letter-spacing: 2px;
-  transition: all 0.4s ease;
-}
-
-.hero a:hover {
-  background: #e0d8c8;
-  color: #1c1714;
+.hero p{
+  color:#e6ddcf;
+  opacity:0.85;
+  font-size:18px;
 }
 
 /* SECTION */
-.section {
-  padding: 120px 8%;
-  text-align: center;
+.section{
+  padding:120px 8%;
 }
 
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  margin-bottom: 60px;
+.section h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  margin-bottom:80px;
 }
 
-/* PRODUCTS */
-.product-row {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+/* PRODUCTS LAYOUT */
+.products{
+  display:flex;
+  flex-direction:column;
+  gap:50px;
 }
 
-.product-card {
-  width: 280px;
-  padding: 30px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  animation: fadeUp 1.2s ease forwards;
+/* CARD GENERAL */
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:blur(8px);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,0.25);
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+  cursor:pointer;
 }
 
-.product-card:nth-child(1) { animation-delay: 0.3s; }
-.product-card:nth-child(2) { animation-delay: 0.6s; }
-.product-card:nth-child(3) { animation-delay: 0.9s; }
-
-.product-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 10px;
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 45px 90px rgba(0,0,0,0.35);
 }
 
-.product-card p {
-  font-size: 14px;
-  opacity: 0.75;
+/* CARD LINK */
+.card a{
+  position:absolute;
+  inset:0;
+  z-index:5;
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+/* OVERLAY */
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55)
+  );
+  z-index:2;
+}
+
+/* CONTENT */
+.card-content{
+  position:relative;
+  z-index:3;
+  padding:40px;
+  color:#fff;
+}
+
+.card-content h3{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.card-content p{
+  font-size:15px;
+  opacity:0.85;
+}
+
+/* MAIN CARD */
+.card-main{
+  height:420px;
+}
+
+/* SMALL CARDS */
+.card-row{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.card-small{
+  flex:1;
+  min-width:260px;
+  height:300px;
 }
 
 /* FOOTER */
-footer {
-  padding: 60px 0;
-  text-align: center;
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer{
+  text-align:center;
+  padding:70px 0;
+  font-size:12px;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -146,33 +162,55 @@ footer {
 <body>
 
 <section class="hero">
-  <div class="hero-content">
+  <div>
     <h1>YOUR BRAND</h1>
-    <p>Une vision. Une identité. Une élégance intemporelle.</p>
-    <a href="#">DÉCOUVRIR</a>
+    <p>Élégance. Identité. Présence.</p>
   </div>
 </section>
 
 <section class="section">
   <h2>Collection</h2>
-  <div class="product-row">
-    <div class="product-card">
-      <h3>Produit I</h3>
-      <p>Design épuré et présence raffinée.</p>
+
+  <div class="products">
+
+    <!-- PRODUIT PRINCIPAL -->
+    <div class="card card-main">
+      <img src="produit1.jpg" alt="Produit principal">
+      <a href="https://wa.me/212691444558" target="_blank"></a>
+      <div class="card-content">
+        <h3>Produit Signature</h3>
+        <p>La pièce maîtresse de la collection.</p>
+      </div>
     </div>
-    <div class="product-card">
-      <h3>Produit II</h3>
-      <p>Équilibre entre force et élégance.</p>
+
+    <!-- DEUX PRODUITS -->
+    <div class="card-row">
+
+      <div class="card card-small">
+        <img src="produit2.jpg" alt="Produit 2">
+        <a href="https://wa.me/212691444558" target="_blank"></a>
+        <div class="card-content">
+          <h3>Produit II</h3>
+          <p>Équilibre et distinction.</p>
+        </div>
+      </div>
+
+      <div class="card card-small">
+        <img src="produit3.jpg" alt="Produit 3">
+        <a href="https://wa.me/212691444558" target="_blank"></a>
+        <div class="card-content">
+          <h3>Produit III</h3>
+          <p>Minimalisme affirmé.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="product-card">
-      <h3>Produit III</h3>
-      <p>Une signature unique et assumée.</p>
-    </div>
+
   </div>
 </section>
 
 <footer>
-  © 2026 — Brand Officiel
+© 2026 — Brand Officiel
 </footer>
 
 </body>
