@@ -1,217 +1,133 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>Brand Officiel</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Hold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #2b1e14 0%, #4a3525 50%, #f5f0e6 100%);
+      direction: rtl;
+      color: #111;
+      min-height: 100vh;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    .container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    .brand { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 36px; 
+      text-align: center; 
+      color: #fff; 
+      margin-bottom: 10px; 
+    }
+    .subtitle { 
+      text-align: center; 
+      color: #e8dccb; 
+      font-size: 16px; 
+      margin-bottom: 40px; 
+    }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(
-    180deg,
-    #2b1e14 0%,
-    #4a3525 45%,
-    #f5f0e6 100%
-  );
-  color:#1e1a17;
-}
+    .product-row {
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 25px; 
+      justify-content: center;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
+    .product-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
 
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:64px;
-  color:#f5f0e6;
-  margin-bottom:20px;
-}
+    .product-image {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
 
-.hero p{
-  color:#e6ddcf;
-  opacity:0.85;
-  font-size:18px;
-}
-
-/* SECTION */
-.section{
-  padding:120px 8%;
-}
-
-.section h2{
-  text-align:center;
-  font-family:'Playfair Display',serif;
-  font-size:42px;
-  margin-bottom:80px;
-}
-
-/* PRODUCTS LAYOUT */
-.products{
-  display:flex;
-  flex-direction:column;
-  gap:50px;
-}
-
-/* CARD GENERAL */
-.card{
-  position:relative;
-  background:rgba(255,255,255,0.78);
-  backdrop-filter:blur(8px);
-  border-radius:26px;
-  overflow:hidden;
-  box-shadow:0 30px 70px rgba(0,0,0,0.25);
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-  cursor:pointer;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 45px 90px rgba(0,0,0,0.35);
-}
-
-/* CARD LINK */
-.card a{
-  position:absolute;
-  inset:0;
-  z-index:5;
-}
-
-/* IMAGE */
-.card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  inset:0;
-  z-index:1;
-}
-
-/* OVERLAY */
-.card::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55)
-  );
-  z-index:2;
-}
-
-/* CONTENT */
-.card-content{
-  position:relative;
-  z-index:3;
-  padding:40px;
-  color:#fff;
-}
-
-.card-content h3{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.card-content p{
-  font-size:15px;
-  opacity:0.85;
-}
-
-/* MAIN CARD */
-.card-main{
-  height:420px;
-}
-
-/* SMALL CARDS */
-.card-row{
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.card-small{
-  flex:1;
-  min-width:260px;
-  height:300px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:70px 0;
-  font-size:12px;
-  opacity:0.6;
-}
-</style>
+    .title { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 10px; }
+    .desc { font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+    .features { list-style: none; margin-bottom: 12px; font-size: 14px; }
+    .features li { margin-bottom: 6px; }
+    .price { font-size: 18px; font-weight: 600; margin-bottom: 15px; }
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background: linear-gradient(135deg, #3a2a1f, #6f4e37);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+    .note { text-align: center; font-size: 13px; color: #eee; margin-top: 30px; }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <div class="brand">Urban Hold</div>
+    <div class="subtitle">ثبات راقي. حضور قوي.</div>
 
-<section class="hero">
-  <div>
-    <h1>YOUR BRAND</h1>
-    <p>Élégance. Identité. Présence.</p>
-  </div>
-</section>
+    <div class="product-row">
+      <!-- المنتج الأول -->
+      <div class="product-card" onclick="window.location.href='https://wa.me/212600000000?text=سلام، بغيت نطلب جيل تثبيت الشعر'">
+        <img src="gel.jpg" alt="جيل تثبيت الشعر" class="product-image" />
+        <div class="title">جيل تثبيت الشعر</div>
+        <div class="desc">تركيبة مدروسة بعناية لتمنحك ثباتًا قويًا ولمسة طبيعية.</div>
+        <ul class="features">
+          <li>✔ ثبات طويل يدوم طوال اليوم</li>
+          <li>✔ ملمس طبيعي بدون قساوة</li>
+          <li>✔ مناسب للاستعمال اليومي</li>
+        </ul>
+        <div class="price">35 درهم</div>
+        <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب جيل تثبيت الشعر" target="_blank">اطلب الآن</a>
+      </div>
 
-<section class="section">
-  <h2>Collection</h2>
+      <!-- المنتج الثاني -->
+      <div class="product-card" onclick="window.location.href='https://wa.me/212691444558?text=سلام، بغيت نطلب سبراي تثبيت الشعر'">
+        <img src="spray.jpg" alt="سبراي تثبيت الشعر" class="product-image" />
+        <div class="title">سبراي تثبيت الشعر</div>
+        <div class="desc">سبراي خفيف يعطيك ثبات متوسط ولمسة ناعمة للشعر مع حماية من الرطوبة.</div>
+        <ul class="features">
+          <li>✔ ثبات متوسط وطبيعي</li>
+          <li>✔ حماية من الرطوبة</li>
+          <li>✔ مثالي للشعر القصير والطويل</li>
+        </ul>
+        <div class="price">40 درهم</div>
+        <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب سبراي تثبيت الشعر" target="_blank">اطلب الآن</a>
+      </div>
 
-  <div class="products">
-
-    <!-- PRODUIT PRINCIPAL -->
-    <div class="card card-main">
-      <img src="gel.jpg" alt="Produit principal">
-      <a href="https://wa.me/212691444558" target="_blank"></a>
-      <div class="card-content">
-        <h3>Produit Signature</h3>
-        <p>La pièce maîtresse de la collection.</p>
+      <!-- المنتج الثالث -->
+      <div class="product-card" onclick="window.location.href='https://wa.me/212691444558?text=سلام، بغيت نطلب واكس الشعر'">
+        <img src="wax.jpg" alt="واكس الشعر" class="product-image" />
+        <div class="title">واكس الشعر</div>
+        <div class="desc">واكس غني لتشكيل الشعر بأشكال متعددة مع لمسة نهائية لامعة طبيعية.</div>
+        <ul class="features">
+          <li>✔ تشكيل سهل ومرن</li>
+          <li>✔ لمسة لامعة طبيعية</li>
+          <li>✔ مثالي للشعر القصير والطويل</li>
+        </ul>
+        <div class="price">45 درهم</div>
+        <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب واكس الشعر" target="_blank">اطلب الآن</a>
       </div>
     </div>
 
-    <!-- DEUX PRODUITS -->
-    <div class="card-row">
-
-      <div class="card card-small">
-        <img src="spray.jpg" alt="Produit 2">
-        <a href="https://wa.me/212691444558" target="_blank"></a>
-        <div class="card-content">
-          <h3>Produit II</h3>
-          <p>Équilibre et distinction.</p>
-        </div>
-      </div>
-
-      <div class="card card-small">
-        <img src="wax.jpg" alt="Produit 3">
-        <a href="https://wa.me/212691444558" target="_blank"></a>
-        <div class="card-content">
-          <h3>Produit III</h3>
-          <p>Minimalisme affirmé.</p>
-        </div>
-      </div>
-
-    </div>
-
+    <div class="note">توصيل لجميع المدن المغربية</div>
   </div>
-</section>
-
-<footer>
-© 2026 — Brand Officiel
-</footer>
-
 </body>
 </html>
