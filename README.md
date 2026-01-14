@@ -15,7 +15,7 @@
       font-family: 'Inter', sans-serif;
       direction: rtl;
       color: #111;
-      /* خلفية جميلة: صورة + gradient */
+      /* خلفية جميلة */
       background: linear-gradient(180deg, rgba(58,42,31,0.85), rgba(245,240,230,0.95)), 
                   url('background.jpg') center/cover no-repeat;
       min-height: 100vh;
@@ -155,6 +155,7 @@
           <li>✔ مناسب للاستعمال اليومي</li>
         </ul>
         <div class="price">35 درهم</div>
+        <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب جيل تثبيت الشعر" target="_blank">
           اطلب الآن عبر واتساب
         </a>
       </div>
