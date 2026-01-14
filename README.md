@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الموقع الرسمي للمنتجات</title>
+<title>Brand Officiel</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -16,265 +16,176 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, rgba(30,20,10,0.95), rgba(245,240,230,0.95));
-  color: #111;
-  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(43,30,20,0.95), rgba(245,240,230,0.95));
+  color: #fff;
+  direction: rtl;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* عنوان الموقع */
 .brand {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
-  color: #fff;
   text-align: center;
   margin-bottom: 10px;
 }
 
 .subtitle {
   text-align: center;
-  color: #e8dccb;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-/* container للبطاقات */
-.product-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  align-items: center;
-}
-
-/* البطاقة الرئيسية */
-.product-main {
-  background: rgba(255,255,255,0.12); /* glass effect */
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  width: 90%;
-  max-width: 600px;
-  padding: 30px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.product-main:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-}
-
-.product-main img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.product-main:hover img {
-  transform: scale(1.05);
-}
-
-.product-main .title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.product-main .desc {
-  font-size: 16px;
-  color: #eee;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.product-main .features {
-  list-style: none;
-  margin-bottom: 20px;
-}
-
-.product-main .features li {
   font-size: 15px;
-  margin-bottom: 6px;
+  color: #ddd;
+  margin-bottom: 30px;
 }
 
-.product-main .price {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.product-main .btn {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 0;
-  border-radius: 14px;
-  font-size: 17px;
-  font-weight: bold;
-  width: 80%;
-  transition: background 0.3s ease;
-}
-
-.product-main .btn:hover {
-  background: linear-gradient(135deg, #1ebe5d, #25D366);
-}
-
-/* الصف ديال البطاقات الصغرى */
-.product-row {
+.product-main, .product-row {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .product-card {
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.08);
   border-radius: 20px;
-  width: 250px;
-  padding: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  cursor: pointer;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  animation: fadeUp 1s ease forwards;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
 }
 
-.product-card img {
+.product-image {
   width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  margin-bottom: 18px;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
-}
-
-.product-card .title {
+.title {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
-.product-card .desc {
-  font-size: 14px;
+.desc {
+  font-size: 14.5px;
+  line-height: 1.7;
   color: #eee;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-.product-card .features {
+.features {
   list-style: none;
   margin-bottom: 15px;
+  padding-left: 0;
 }
 
-.product-card .features li {
-  font-size: 13px;
-  margin-bottom: 5px;
+.features li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #ddd;
 }
 
-.product-card .price {
-  font-size: 18px;
+.price {
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
+  color: #fff;
 }
 
-.product-card .btn {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #3a2a1f, #6f4e37);
   color: #fff;
   text-decoration: none;
-  padding: 12px 0;
+  font-size: 16px;
   border-radius: 12px;
-  font-size: 15px;
   font-weight: bold;
-  transition: background 0.3s ease;
 }
 
-.product-card .btn:hover {
-  background: linear-gradient(135deg, #1ebe5d, #25D366);
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* responsive */
-@media(max-width:900px){
-  .product-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-main {
-    width: 95%;
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* animation delay */
+.product-card:nth-child(1) { animation-delay: 0.2s; }
+.product-card:nth-child(2) { animation-delay: 0.4s; }
+.product-card:nth-child(3) { animation-delay: 0.6s; }
 
 </style>
 </head>
 <body>
 
 <div class="container">
+  <div class="brand">Urban Hold</div>
+  <div class="subtitle">ثبات راقي. حضور قوي.</div>
 
-  <div class="brand">Brand Officiel</div>
-  <div class="subtitle">منتجات راقية، تجربة مثالية.</div>
-
-  <div class="product-container">
-    
-    <!-- البطاقة الرئيسية -->
-    <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب الجل" target="_blank" class="product-main">
-      <img src="gel.jpg" alt="جيل الشعر">
+  <!-- البطاقة الرئيسية -->
+  <div class="product-main">
+    <div class="product-card">
+      <img src="gel.jpg" alt="جيل تثبيت الشعر" class="product-image">
       <div class="title">جيل تثبيت الشعر</div>
       <div class="desc">
-        جل قوي لتثبيت الشعر، يعطي لمعة طبيعية ويترك شعرك ثابت طوال اليوم بدون قساوة.
+        تركيبة قوية تمنحك ثباتا قصويا ولمسة نهائية لامعة طبيعية. للشعر القاسي والقصير، يوفر تحكم كامل دون أن يترك الشعر صلبا.
       </div>
       <ul class="features">
-        <li>✔ ثبات قوي</li>
-        <li>✔ ملمس طبيعي</li>
-        <li>✔ مناسب للاستخدام اليومي</li>
+        <li>✔ ثبات طويل يدوم طوال اليوم</li>
+        <li>✔ ملمس طبيعي بدون قساوة</li>
+        <li>✔ مناسب للاستعمال اليومي</li>
       </ul>
       <div class="price">35 درهم</div>
-      <div class="btn">اطلب الآن عبر واتساب</div>
-    </a>
+      <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب الجيل" target="_blank">اطلب الآن عبر واتساب</a>
+    </div>
+  </div>
 
-    <!-- الصف ديال البطاقات الصغرى -->
-    <div class="product-row">
-      <!-- المنتج الثاني -->
-      <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب سبراي" target="_blank" class="product-card">
-        <img src="spray.jpg" alt="سبراي الشعر">
-        <div class="title">سبراي تثبيت الشعر</div>
-        <div class="desc">سبراي خفيف يعطي ثبات متوسط ولمسة ناعمة مع حماية من الرطوبة.</div>
-        <ul class="features">
-          <li>✔ ثبات متوسط</li>
-          <li>✔ حماية من الرطوبة</li>
-          <li>✔ مثالي للشعر القصير والطويل</li>
-        </ul>
-        <div class="price">40 درهم</div>
-        <div class="btn">اطلب الآن عبر واتساب</div>
-      </a>
-
-      <!-- المنتج الثالث -->
-      <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب واكس" target="_blank" class="product-card">
-        <img src="wax.jpg" alt="واكس الشعر">
-        <div class="title">واكس الشعر</div>
-        <div class="desc">واكس غني لتشكيل الشعر بسهولة ولمسة نهائية لامعة طبيعية.</div>
-        <ul class="features">
-          <li>✔ تشكيل سهل ومرن</li>
-          <li>✔ لمسة لامعة طبيعية</li>
-          <li>✔ مثالي للشعر القصير والطويل</li>
-        </ul>
-        <div class="price">45 درهم</div>
-        <div class="btn">اطلب الآن عبر واتساب</div>
-      </a>
+  <!-- الصف للبطاقتين التاليتين -->
+  <div class="product-row">
+    <div class="product-card">
+      <img src="spray.jpg" alt="سبراي تثبيت الشعر" class="product-image">
+      <div class="title">سبراي تثبيت الشعر</div>
+      <div class="desc">
+        سبراي خفيف يعطيك ثبات متوسط ولمسة ناعمة للشعر مع حماية من الرطوبة.
+      </div>
+      <ul class="features">
+        <li>✔ ثبات متوسط وطبيعي</li>
+        <li>✔ حماية من الرطوبة</li>
+        <li>✔ مثالي للشعر القصير والطويل</li>
+      </ul>
+      <div class="price">40 درهم</div>
+      <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب السبراي" target="_blank">اطلب الآن عبر واتساب</a>
     </div>
 
+    <div class="product-card">
+      <img src="wax.jpg" alt="واكس الشعر" class="product-image">
+      <div class="title">واكس الشعر</div>
+      <div class="desc">
+        واكس غني لتشكيل الشعر بأشكال متعددة مع لمسة نهائية لامعة طبيعية.
+      </div>
+      <ul class="features">
+        <li>✔ تشكيل سهل ومرن</li>
+        <li>✔ لمسة لامعة طبيعية</li>
+        <li>✔ مثالي للشعر القصير والطويل</li>
+      </ul>
+      <div class="price">45 درهم</div>
+      <a class="btn" href="https://wa.me/212691444558?text=سلام، بغيت نطلب الواكس" target="_blank">اطلب الآن عبر واتساب</a>
+    </div>
   </div>
 
 </div>
