@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urban Hold</title>
+<title>Outazarine</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -16,163 +15,206 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:#ffffff;
+  background:#fff;
   color:#111;
 }
 
-/* ===== HERO ===== */
-.hero{
-  position:relative;
+/* ===== HEADER / LOGO ===== */
+header{
   height:100vh;
-  background:url('hero.jpg') center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
+  background:url("hero.jpg") center/cover no-repeat;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0.35);
+.brand-logo{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  color:#000;
+  background:rgba(255,255,255,0.85);
+  padding:18px 40px;
 }
 
-.logo{
+/* ===== PRODUCTS SECTION ===== */
+section{
+  max-width:1200px;
+  margin:120px auto;
+  padding:0 20px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:60px;
+}
+
+/* layout */
+.products-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* ===== CARD ===== */
+.card{
   position:relative;
-  z-index:2;
-  width:220px;
-  animation:logoFloat 1.2s ease;
-}
-
-@keyframes logoFloat{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* ===== SECTION ===== */
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-/* ===== PRODUCT CARD ===== */
-.product{
-  background:#fff;
   border-radius:18px;
   overflow:hidden;
   cursor:pointer;
-  transition:all .4s ease;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  background:#f6f6f6;
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+  transition:transform .5s ease, box-shadow .5s ease;
 }
 
-.product:hover{
-  transform:translateY(-6px);
-  box-shadow:0 25px 60px rgba(0,0,0,.15);
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 45px 90px rgba(0,0,0,0.18);
 }
 
-.product img{
+/* image */
+.card img{
   width:100%;
+  height:380px;
+  object-fit:cover;
   display:block;
 }
 
-.product-content{
-  padding:22px;
+/* content */
+.card-content{
+  padding:26px;
 }
 
-.product h2{
+.card h3{
   font-family:'Playfair Display',serif;
   font-size:22px;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
-.product p{
-  font-size:14px;
-  line-height:1.8;
-  color:#444;
+.card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#333;
 }
 
-/* ===== GRID ===== */
-.main-product{
-  max-width:520px;
-  margin:0 auto 70px;
-}
-
-.sub-products{
+/* ===== WhatsApp badge ===== */
+.whatsapp-badge{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  width:52px;
+  height:52px;
+  background:#25D366;
+  border-radius:12px;
   display:flex;
-  gap:40px;
+  align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
-.sub-products .product{
-  max-width:420px;
+.whatsapp-badge svg{
+  width:26px;
+  height:26px;
+  fill:#fff;
 }
 
-/* ===== LINK RESET ===== */
-a{
-  text-decoration:none;
+/* ===== remove any underline ===== */
+a,
+a:hover,
+a:focus,
+a:visited{
+  text-decoration:none !important;
+  border:none !important;
   color:inherit;
+}
+
+.card *{
+  text-decoration:none !important;
+}
+
+/* ===== responsive ===== */
+@media(max-width:900px){
+  .products-bottom{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:300px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="LOGO.png" alt="Urban Hold" class="logo">
-</div>
+<header>
+  <div class="brand-logo">OUTAZARINE</div>
+</header>
 
-<!-- PRODUCTS -->
-<div class="section">
+<section>
+  <div class="products">
 
-  <!-- المنتج الأساسي -->
-  <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب جيل تثبيت الشعر">
-    <div class="product main-product">
-      <img src="gel.jpg" alt="جيل تثبيت الشعر">
-      <div class="product-content">
-        <h2>جيل تثبيت الشعر</h2>
+    <!-- MAIN PRODUCT -->
+    <a href="https://wa.me/212691444558" class="card">
+      <img src="product1.jpg" alt="">
+      <div class="card-content">
+        <h3>Gel de fixation forte</h3>
         <p>
-          جيل احترافي بتركيبة مركّزة، يمنحك ثبات قوي ولمعة أنيقة تدوم طوال اليوم.
-          يحافظ على شكل التسريحة بدون تكتل أو جفاف، ويُستعمل بسهولة للحصول
-          على ستايل عصري ونظيف.
+        منتوج التثبيت القوي لي كيعطيك شعر قاصح ولامع بحال الفازك بالماء.
+        كيثبت التسريحة طوال النهار بلا ما يخلي أثر دهني، ومناسب للاستعمال اليومي
+        بطريقة سهلة ونظيفة.
         </p>
       </div>
+      <div class="whatsapp-badge">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.74 4.86-1.28A10 10 0 1 0 12 2z"/>
+        </svg>
+      </div>
+    </a>
+
+    <!-- TWO PRODUCTS -->
+    <div class="products-bottom">
+
+      <a href="https://wa.me/212691444558" class="card">
+        <img src="product2.jpg" alt="">
+        <div class="card-content">
+          <h3>Fixation moyenne</h3>
+          <p>
+          نسخة أخف شوية من المنتوج الأول، كيعطي ثبات مزيان
+          ولكن كيخلي الشعر طبيعي وما قاصحش بزاف،
+          مناسب للناس لي باغيين ستايل أنيق ومريح.
+          </p>
+        </div>
+        <div class="whatsapp-badge">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.74 4.86-1.28A10 10 0 1 0 12 2z"/>
+          </svg>
+        </div>
+      </a>
+
+      <a href="https://wa.me/212691444558" class="card">
+        <img src="product3.jpg" alt="">
+        <div class="card-content">
+          <h3>Fixation légère</h3>
+          <p>
+          منتوج خفيف بزاف، كيعطي مظهر طبيعي
+          وثبات متوسط، مناسب للاستعمال اليومي
+          وللناس لي ما باغيينش شعرهم يتقاصح بزاف
+          ولكن يبقى منظم وأنيق.
+          </p>
+        </div>
+        <div class="whatsapp-badge">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.74 4.86-1.28A10 10 0 1 0 12 2z"/>
+          </svg>
+        </div>
+      </a>
+
     </div>
-  </a>
-
-  <!-- المنتجات الثانوية -->
-  <div class="sub-products">
-
-    <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب سبراي تثبيت الشعر">
-      <div class="product">
-        <img src="spray.jpg" alt="سبراي تثبيت الشعر">
-        <div class="product-content">
-          <h2>سبراي تثبيت الشعر</h2>
-          <p>
-            سبراي خفيف يمنحك ثبات متوازن ولمسة طبيعية،
-            مناسب للاستعمال اليومي ويترك الشعر مرن وسهل التعديل.
-          </p>
-        </div>
-      </div>
-    </a>
-
-    <a href="https://wa.me/212691444558?text=سلام، بغيت نطلب واكس الشعر">
-      <div class="product">
-        <img src="wax.jpg" alt="واكس الشعر">
-        <div class="product-content">
-          <h2>واكس الشعر</h2>
-          <p>
-            واكس خفيف القوام يمنحك مظهر عصري بدون قساوة،
-            مثالي للستايلات اليومية ولمسة أنيقة غير مبالغ فيها.
-          </p>
-        </div>
-      </div>
-    </a>
-
   </div>
-</div>
+</section>
 
 </body>
 </html>
