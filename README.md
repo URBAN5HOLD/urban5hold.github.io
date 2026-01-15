@@ -20,7 +20,7 @@
 /* العناوين */
 .card h3{
   font-family:'Playfair Display', serif;
-  font-style: italic;
+  font-style: arabe;
   font-size:22px;
   font-weight:500;
   letter-spacing:0.03em;
