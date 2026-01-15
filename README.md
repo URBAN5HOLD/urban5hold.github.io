@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Outazarine</title>
+<title>H Y</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -138,7 +138,7 @@ a{
 
     <!-- MAIN PRODUCT -->
     <a href="https://wa.me/212691444558" class="card">
-      <img src="gel" alt="">
+      <img src="gel.jpg" alt="">
       <div class="card-content">
         <h3>Gel de fixation forte</h3>
         <p>
