@@ -168,7 +168,7 @@ a{
 Keeps your hairstyle in place all day without leaving any greasy residue
 and is suitable for daily use with a clean and easy application
 
-إ.
+
         </p>
       </div>
       <div class="whatsapp-bar">اطلب الآن عبر واتساب</div>
