@@ -166,12 +166,12 @@ a{
         <p>
        A strong-hold styling product that gives your hair a firm, shiny look similar to a water-based pomade.
 Keeps your hairstyle in place all day without leaving any greasy residue
-and is suitable for daily use with a clean and easy application
+and is suitable for daily use with a clean and easy application.
 
 
         </p>
       </div>
-      <div class="whatsapp-bar">اطلب الآن عبر واتساب</div>
+      <div class="whatsapp-bar">Order now via WhatsApp</div>
     </a>
 
     <!-- TWO PRODUCTS -->
@@ -181,25 +181,23 @@ and is suitable for daily use with a clean and easy application
         <img src="spray.jpg" alt="">
         <div class="card-content">
           <h3>Fixation moyenne</h3>
-          <p>
-          ثبات متوسط كيعطي ستايل طبيعي،
-          ما كيقصّحش الشعر بزاف وكيخليه منظم وأنيق.
+          <p>Medium hold that gives a natural style,
+doesn’t stiffen the hair too much, and keeps it neat and elegant.
           </p>
         </div>
-        <div class="whatsapp-bar">اطلب الآن عبر واتساب</div>
+        <div class="whatsapp-bar">Order now via WhatsApp</div>
       </a>
 
       <a href="https://wa.me/212691444558" class="card">
         <img src="wax.jpg" alt="">
         <div class="card-content">
           <h3>Fixation légère</h3>
-          <p>
-          تركيبة خفيفة بزاف،
-          كتحافظ على مظهر طبيعي مع ثبات متوسط
-          مناسب للاستعمال اليومي.
+          <p>Very lightweight formula,
+maintains a natural look with medium hold,
+suitable for daily use.
           </p>
         </div>
-        <div class="whatsapp-bar">اطلب الآن عبر واتساب</div>
+        <div class="whatsapp-bar">Order now via WhatsApp</div>
       </a>
 
     </div>
