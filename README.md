@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة الهبوط - المنتج ديالك</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>Lisseur Professionnel - صالون في دارك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #e67e22; /* لون زر الطلب - تقدر تبدلو */
-            --text-dark: #2c3e50;
-            --bg-light: #f9f9f9;
+            --accent-color: #d4a373; /* لون ذهبي ناعم */
+            --pink-bg: #fff5f6; /* خلفية وردية خفيفة */
+            --dark-text: #333;
+            --cta-color: #e63946; /* لون زر الطلب واضح */
         }
 
         body {
@@ -17,177 +18,181 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
-            color: var(--text-dark);
-            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .header-promo {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
         .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #8c5e58;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Price & Badge */
+        .price-section {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .new-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cta-color);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        /* Features List */
+        .features {
+            background: var(--pink-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item:before {
+            content: '✦';
+            margin-left: 10px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Reviews Section (Social Proof) */
+        .reviews {
+            margin-top: 40px;
+        }
+
+        .review-card {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .stars { color: #f1c40f; margin-bottom: 5px; }
+
+        /* Floating CTA Button */
+        .cta-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            z-index: 100;
             text-align: center;
         }
 
-        /* 1. Headline Section */
-        header {
-            padding: 40px 0;
-            background-color: var(--bg-light);
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #d35400;
-            margin-bottom: 10px;
-        }
-
-        .sub-headline {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-        }
-
-        /* 2. Media Section */
-        .media-container {
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .media-container img, .media-container video {
-            width: 100%;
-            display: block;
-        }
-
-        /* 3. Benefits Section */
-        .benefits {
-            padding: 40px 0;
-            text-align: right;
-        }
-
-        .benefit-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-right: 4px solid var(--primary-color);
-            background: #fff9f5;
-        }
-
-        /* 4. Social Proof */
-        .testimonials {
-            background: var(--bg-light);
-            padding: 40px 0;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        /* 5. The Offer */
-        .offer-box {
-            border: 2px dashed #e74c3c;
-            padding: 30px;
-            margin: 40px 0;
-            background-color: #fdf2f2;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #c0392b;
-        }
-
-        /* 6. Call to Action Button */
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 40px;
-            font-size: 1.5rem;
+        .btn-order {
+            background: var(--cta-color);
+            color: #fff;
             text-decoration: none;
-            border-radius: 50px;
+            display: block;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.3rem;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
-            transition: transform 0.3s ease;
-            margin-top: 20px;
-            animation: pulse 2s infinite;
+            animation: shake 3s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            5% { transform: translateX(-5px); }
+            10% { transform: translateX(5px); }
+            15% { transform: translateX(0); }
         }
 
-        footer {
-            padding: 30px;
-            font-size: 0.9rem;
-            color: #95a5a6;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; }
-            .cta-button { width: 80%; font-size: 1.2rem; }
-        }
+        /* Spacer for fixed button */
+        .spacer { height: 100px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>هنا دير العنوان القوي (مثلا: تخلصي من مشاكل البشرة في 7 أيام فقط!)</h1>
-            <p class="sub-headline">هنا دير وصف صغير كيشجع (مثلا: الحل الطبيعي والأكثر مبيعاً في المغرب)</p>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="media-container">
-            <img src="https://via.placeholder.com/600x400" alt="صورة المنتج">
-        </div>
-
-        <section class="benefits">
-            <h2>علاش غادي يعجبك هاد المنتج؟</h2>
-            <div class="benefit-item">
-                <strong>ميزة 1:</strong> هنا شرح كيفاش غينفع الكليان (مثلا: كيرطب البشرة بعمق).
-            </div>
-            <div class="benefit-item">
-                <strong>ميزة 2:</strong> ميزة تانية (مثلا: مكونات طبيعية 100% بدون مواد كيماوية).
-            </div>
-            <div class="benefit-item">
-                <strong>ميزة 3:</strong> ميزة تالتة (مثلا: سهل الاستعمال وكيناسب جميع أنواع البشرة).
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2>شنو كايقولو الزبناء ديالينا؟</h2>
-            <div class="testimonial-card">
-                "بصراحة جربت بزاف ديال المنتجات ولكن هادا هو اللي عطاني نتيجة من السيمانة اللولة."
-                <br><strong>- سناء من الدار البيضاء</strong>
-            </div>
-            <div class="testimonial-card">
-                "التوصيل كان سريع والمنتج وصلني كيفما فالتصويرة، شكراً بزاف."
-                <br><strong>- محمد من مراكش</strong>
-            </div>
-        </section>
-
-        <div class="offer-box">
-            <h3>عرض خاص ومحدود!</h3>
-            <p>توصيل فابور + الدفع عند الاستلام</p>
-            <div class="price">199 درهم</div>
-            <p style="text-decoration: line-through; color: #7f8c8d;">عوض 399 درهم</p>
-            
-            <a href="رابط_الواتساب_أو_Google_Form_هنا" class="cta-button">إضغط هنا للطلب الآن</a>
-        </div>
+    <div class="header-promo">
+        شحن مجاني لجميع المدن المغربية 📦 الدفع عند الاستلام
     </div>
 
-    <footer>
-        <div class="container">
-            &copy; 2026 جميع الحقوق محفوظة لمتجركم
+    <div class="container">
+        <section class="hero">
+            <h1>احصلي على شعر ناعم وجذاب في دقائق ✨</h1>
+            <p>المكواة الاحترافية المفضلة لدى صالونات التجميل الآن بين يديك</p>
+            <img src="https://via.placeholder.com/600x600" class="main-img" alt="Product Image">
+        </section>
+
+        <div class="price-section">
+            <span class="new-price">349 درهم</span>
+            <span class="old-price">599 درهم</span>
         </div>
-    </footer>
+
+        <section class="features">
+            <div class="feature-item">تقنية الأيونات لحماية الشعر من التلف</div>
+            <div class="feature-item">تسخين سريع في أقل من 30 ثانية</div>
+            <div class="feature-item">تصميم مريح وسهل الاستخدام (2 في 1)</div>
+            <div class="feature-item">مناسب لجميع أنواع الشعر (الخشن والناعم)</div>
+        </section>
+
+        <section class="reviews">
+            <h3>آراء زبوناتنا الوفيات ⭐</h3>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"بصراحة واعر بزااف، كيرطب الشعر من أول دوزة ومكايحرقش. شكراً!"</p>
+                <strong>- هدى، الدار البيضاء</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"وصلني فـ 24 ساعة، التغليف أنيق والمنتج جودته عالية."</p>
+                <strong>- ليلى، طنجة</strong>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+    </div>
+
+    <div class="cta-container">
+        <div class="container">
+            <a href="https://wa.me/2126XXXXXXXX" class="btn-order">اطلبي الآن عبر الواتساب</a>
+            <p style="font-size: 0.8rem; margin: 5px 0 0;">(العرض سينتهي قريباً!)</p>
+        </div>
+    </div>
 
 </body>
 </html>
