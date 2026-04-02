@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELORIA BEAUTY - الحقيبة الذكية</title>
+    <title>VELORIA BEAUTY - العرض المتكامل</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -37,7 +37,7 @@
 
         .price-box { margin: 15px 0; }
         .new-price { font-size: 32px; color: #e91e63; font-weight: bold; }
-        .badge { background: #ff5252; color: #fff; padding: 6px 15px; border-radius: 5px; font-size: 14px; display: inline-block; margin-top: 5px; }
+        .badge { background: #ff5252; color: #fff; padding: 6px 15px; border-radius: 5px; font-size: 14px; display: inline-block; margin-top: 5px; font-weight: bold; }
 
         .info-card { padding: 40px 15px; border-bottom: 1px solid #f0f0f0; }
         .info-card h3 { color: var(--dark-pink); margin-bottom: 15px; font-size: 1.3rem; }
@@ -91,12 +91,12 @@
     </div>
 
     <section class="hero">
-        <h1>استوديو جمال متنقل: حقيبة الماكياج الذكية ✨</h1>
+        <h1>عرض الأناقة: حقيبة الماكياج الذكية + علبة المجوهرات ✨</h1>
         <img src="1.jpg" class="hero-img" alt="حقيبة الماكياج">
         <div class="price-box">
             <span style="text-decoration: line-through; color: #999; font-size: 20px;">538 درهم</span><br>
             <span class="new-price">269 درهم فقط</span><br>
-            <span class="badge">خصم حصري 50%- لفترة محدودة</span>
+            <span class="badge">خصم حصري -50% على الحقيبة والعلبة معاً</span>
         </div>
     </section>
 
