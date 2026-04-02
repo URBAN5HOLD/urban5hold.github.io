@@ -43,6 +43,12 @@
         .info-card h3 { color: var(--dark-pink); margin-bottom: 15px; font-size: 1.3rem; }
         .info-card p { font-size: 1.1rem; color: #555; max-width: 550px; margin: 0 auto; padding: 0 15px; }
 
+        /* ستايل الصور الثلاثة للمرايا */
+        .lighting-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 0 10px; margin-top: 20px; }
+        .light-item { flex: 1; min-width: 100px; max-width: 150px; }
+        .light-item img { width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .light-label { font-size: 13px; font-weight: bold; margin-top: 8px; color: #444; }
+
         .reviews-container { background: var(--main-pink); padding: 40px 15px; }
         .review-card {
             background: #fff; padding: 15px; border-radius: 15px; margin: 12px auto;
@@ -102,8 +108,26 @@
 
     <div class="info-card">
         <h3>مرآة ذكية بـ 3 مستويات إضاءة 💡</h3>
-        <img src="2.jpg" class="hero-img" alt="مرآة ليد">
-        <p>تمتعي بإضاءة احترافية أينما كنتِ! حقيبة فيلوريا مزودة بمرآة LED تعمل باللمس، بـ 3 ألوان (أبيض، دافئ، وطبيعي). المرآة قابلة لإعادة الشحن (USB) ويمكن فصلها عن الحقيبة تماماً لاستعمالها بشكل مستقل.</p>
+        <p style="margin-bottom: 20px;">اختاري الإضاءة المناسبة لكل وقت ولكل إطلالة بلمسة واحدة:</p>
+        
+        <div class="lighting-grid">
+            <div class="light-item">
+                <img src="light1.jpg" alt="ضوء أبيض">
+                <div class="light-label">أبيض طبيعي</div>
+            </div>
+            <div class="light-item">
+                <img src="light2.jpg" alt="ضوء أصفر">
+                <div class="light-label">أصفر دافئ</div>
+            </div>
+            <div class="light-item">
+                <img src="light3.jpg" alt="ضوء ساطع">
+                <div class="light-label">أبيض ناصع</div>
+            </div>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 1rem; color: #555;">
+            المرآة تعمل باللمس، قابلة لإعادة الشحن (USB) ويمكن فصلها عن الحقيبة تماماً لاستعمالها بشكل مستقل في أي مكان.
+        </p>
     </div>
 
     <div class="info-card">
