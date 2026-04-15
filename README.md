@@ -23,18 +23,15 @@
 
         .bottle-center { text-align: center; padding: 30px 0; }
         .img-bottle { width: 40%; max-width: 150px; margin: 0 auto; }
-        
-        /* حيدت الخطوط من تحت الشعارات */
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; letter-spacing: 6px; margin: 10px 0; border: none !important; }
-        .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; border: none !important; }
+        .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; }
 
-        /* تقسيم اليمين واليسار */
         .row { display: flex; align-items: flex-start; width: 100%; padding: 25px 8%; gap: 40px; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 45%; }
         .img-box img { width: 100%; border-radius: 2px; }
         
-        /* إصلاح المربعات البيضاء: جعل الخلفية شفافة */
+        /* حيدت المربعات البيضاء نهائيا */
         .txt-box { width: 55%; color: #fff; text-align: left; background: transparent !important; }
         .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 15px; color: var(--color); letter-spacing: 1px; border: none !important; background: transparent !important; }
         .txt-box p { font-size: 0.8rem; line-height: 1.6; color: #ccc; font-weight: 300; margin-bottom: 12px; background: transparent !important; }
@@ -48,30 +45,26 @@
         
         .size-container { display: flex; gap: 10px; margin-top: 10px; }
         .size-box { flex: 1; padding: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; color: #fff; cursor: pointer; transition: 0.3s; }
-        .size-box span { display: block; font-size: 0.6rem; color: #666; margin-top: 4px; }
+        /* كلمة Sprays بدون رموز */
+        .size-box span { display: block; font-size: 0.6rem; color: #888; margin-top: 4px; text-transform: uppercase; }
         .active-size { border-color: var(--color); background: rgba(255,255,255,0.05); }
         .active-size span { color: var(--color); }
 
-        /* حيدت الخطوط الزرقاء الجانبية من الـ inputs */
+        /* حيدت الخطوط الزرقاء الجانبية وزدت في وضوح الكتابة */
         input { 
             width: 100%; padding: 18px 0; margin-bottom: 10px; 
             background: transparent !important; color: #fff; 
-            border: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; 
+            border: none !important; border-bottom: 1px solid rgba(255,255,255,0.2) !important; 
             font-family: 'Montserrat'; font-size: 0.9rem; border-radius: 0;
         }
-        input::placeholder { color: #444; text-transform: uppercase; letter-spacing: 1px; }
+        input::placeholder { color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
         
-        .order-btn { 
-            width: 100%; padding: 22px; background: #fff; color: #000; 
-            font-family: 'Montserrat'; font-weight: 800; font-size: 1rem; 
-            cursor: pointer; letter-spacing: 2px; border: none; margin-top: 10px;
-        }
+        .order-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-family: 'Montserrat'; font-weight: 800; font-size: 1rem; cursor: pointer; letter-spacing: 2px; border: none; margin-top: 10px; }
 
         @media (max-width: 900px) {
             .row, .row.rev { flex-direction: column; text-align: center; padding: 20px 8%; }
             .img-box, .txt-box { width: 100%; }
             .purchase-area { flex-direction: column-reverse; }
-            .v-header-sauvage { width: 100%; }
         }
 
         .sauv-t { --color: #4A90E2; }
@@ -96,40 +89,34 @@
             <div class="img-box"><img src="assets/sauvage-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>La force et la noblesse d’une fraîcheur poussée à l’extrême. Sauvage Elixir réinterprète la signature iconique de Sauvage en lui injectant une puissance nocturne et une concentration inédite.</p>
-                <p><span class="highlight">Pour :</span> Lui | <span class="highlight">Il est :</span> Puissant et Mystérieux<br>
-                <span class="highlight">Occasion :</span> Les moments d'exception<br>
-                <span class="highlight">Famille olfactive :</span> AROMATIQUE Épicée<br>
-                <span class="highlight">La fragrance :</span> Dense et Magnétique</p>
-                <h3>Le flacon</h3>
-                <p>Le flacon de Sauvage Elixir se pare d'un design précieux, évoquant un flacon d'apothicaire dont les lignes sophistiquées soulignent la rareté de l'essence.</p>
+                <p>La force et la noblesse d’une fraîcheur poussée à l’extrême. Sauvage Elixir réinterprète la signature iconique de Sauvage.</p>
+                <p><span class="highlight">Pour :</span> Lui | <span class="highlight">Il est :</span> Puissant<br>
+                <span class="highlight">Occasion :</span> Soirées d'exception<br>
+                <span class="highlight">Famille :</span> AROMATIQUE Épicée</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Ingrédients Principaux :</span> Cannelle, Lavande, Santal<br>
-                <span class="highlight">Famille Olfactive :</span> AROMATIQUE Boisée<br>
-                <span class="highlight">Notes de Tête :</span> Pamplemousse & Épices<br>
-                <span class="highlight">Notes de Cœur :</span> Essence de Lavande de Nyons<br>
-                <span class="highlight">Notes de Fond :</span> Bois de Santal & Réglisse</p>
+                <p><span class="highlight">Notes de Tête :</span> Pamplemousse & Épices<br>
+                <span class="highlight">Notes de Cœur :</span> Lavande de Nyons<br>
+                <span class="highlight">Notes de Fond :</span> Sillage intense, tenue exceptionnelle (12h+).</p>
                 <ul>
-                    <li><span class="highlight">Notes de tête :</span> Première impression d’un parfum, dure entre 5 et 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Commencent à ressortir après la tête, durent 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Note sous-jacente qui reste le plus longtemps (jusqu'à 12h).</li>
+                    <li><span class="highlight">Notes de tête :</span> Première impression (5-15 min).</li>
+                    <li><span class="highlight">Notes de fond :</span> Signature longue durée qui reste sur la peau.</li>
                 </ul>
             </div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">SAUVAGE ELIXIR</h4><p style="color:#555; font-size:10px; margin:2px 0">EXTRAIT DE PARFUM</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">SAUVAGE ELIXIR</h4><p style="color:#555; font-size:10px">EXTRAIT DE PARFUM</p></div>
                     <img src="assets/sauvage-hand.jpg" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML<span>± 80 RASHAT</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>± 160 RASHAT</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2">
@@ -143,46 +130,36 @@
         <div class="bottle-center">
             <img src="assets/stronger-bottle.png" class="img-bottle">
             <h1 class="brand-logo">STRONGER WITH YOU</h1>
-            <div class="perfume-sub">ABSOLUTELY / PARFUM INTENSE</div>
+            <div class="perfume-sub">INTENSELY / EAU DE PARFUM</div>
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/stronger-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>L'intensité d'un amour absolu capturé dans un parfum. Stronger With You Absolutely est une fragrance boisée et ambrée qui repose sur un nouvel accord rhum envoûtant.</p>
-                <p><span class="highlight">Pour :</span> Lui | <span class="highlight">Il est :</span> Sophistiqué et Sensuel<br>
-                <span class="highlight">Occasion :</span> Rendez-vous galants<br>
-                <span class="highlight">Famille olfactive :</span> AMBRÉE Boisée<br>
-                <span class="highlight">La fragrance :</span> Addictive et Royale</p>
-                <h3>Le flacon</h3>
-                <p>Un dégradé de laque noire intense qui symbolise la puissance du parfum. Les lignes épurées reflètent l'élégance intemporelle.</p>
+                <p>L'intensité d'un amour vibrant. Stronger With You Intensely est une fragrance addictive et boisée.</p>
+                <p><span class="highlight">Pour :</span> Lui | <span class="highlight">Il est :</span> Captivant<br>
+                <span class="highlight">Occasion :</span> Quotidien & Rendez-vous<br>
+                <span class="highlight">Famille :</span> AMBRÉE Boisée</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Ingrédients Principaux :</span> Rhum, Châtaigne, Vanille<br>
-                <span class="highlight">Famille Olfactive :</span> AMBRÉE Orientale<br>
-                <span class="highlight">Notes de Tête :</span> Accord Rhum & Bergamote<br>
-                <span class="highlight">Notes de Cœur :</span> Lavande & Davana<br>
-                <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Cèdre</p>
-                <ul>
-                    <li><span class="highlight">Notes de tête :</span> Éclat immédiat du rhum, dure 5 à 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Transition florale noble, dure 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Signature chaude et boisée, dure jusqu'à 8 heures.</li>
-                </ul>
+                <p><span class="highlight">Notes de Tête :</span> Poivre Rose & Genévrier<br>
+                <span class="highlight">Notes de Cœur :</span> Lavande & Sauge<br>
+                <span class="highlight">Notes de Fond :</span> Sillage sucré et chaud, tenue longue durée (8h+).</p>
             </div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">STRONGER WITH YOU</h4><p style="color:#555; font-size:10px; margin:2px 0">PARFUM INTENSE</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">STRONGER WITH YOU</h4><p style="color:#555; font-size:10px">EAU DE PARFUM</p></div>
                     <img src="assets/stronger-hand.jpg" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec2')">5ML<span>± 80 RASHAT</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>± 160 RASHAT</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec2')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2">
@@ -202,40 +179,29 @@
             <div class="img-box"><img src="assets/libre-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>Libre Intense célèbre la liberté d'une femme audacieuse. Une dualité entre la lavande de France et la fleur d'oranger du Maroc, poussée à son paroxysme.</p>
-                <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Audacieuse et Royale<br>
-                <span class="highlight">Occasion :</span> Luxe quotidien & Soirée<br>
-                <span class="highlight">Famille olfactive :</span> FLORALE Ambrée<br>
-                <span class="highlight">La fragrance :</span> Couture et Enivrante</p>
-                <h3>Le flacon</h3>
-                <p>Le Cassandre iconique est incrusté dans le verre, souligné par une couleur fauve brûlante qui reflète l'intensité du jus.</p>
+                <p>Libre Intense célèbre la liberté d'une femme audacieuse. Une dualité florale brûlante.</p>
+                <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Royale<br>
+                <span class="highlight">Occasion :</span> Luxe & Soirée</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Ingrédients Principaux :</span> Lavande, Fleur d'Oranger, Vanille<br>
-                <span class="highlight">Famille Olfactive :</span> FOUGÈRE Florale<br>
-                <span class="highlight">Notes de Tête :</span> Lavande & Mandarine<br>
-                <span class="highlight">Notes de Cœur :</span> Fleur d'Oranger & Jasmin Sambac<br>
-                <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Ambre Gris</p>
-                <ul>
-                    <li><span class="highlight">Notes de tête :</span> Tension fraîche, dure entre 5 et 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Cœur floral brûlant, dure 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Sillage riche, reste le plus longtemps sur la peau.</li>
-                </ul>
+                <p><span class="highlight">Notes de Tête :</span> Mandarine & Bergamote<br>
+                <span class="highlight">Notes de Cœur :</span> Lavande & Fleur d'Oranger<br>
+                <span class="highlight">Notes de Fond :</span> Sillage puissant, reste actif jusqu'à 10h.</p>
             </div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">LIBRE INTENSE</h4><p style="color:#555; font-size:10px; margin:2px 0">EAU DE PARFUM</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">LIBRE INTENSE</h4><p style="color:#555; font-size:10px">EAU DE PARFUM</p></div>
                     <img src="assets/libre-hand.jpg" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec3')">5ML<span>± 80 RASHAT</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>± 160 RASHAT</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec3')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2">
@@ -249,46 +215,34 @@
         <div class="bottle-center">
             <img src="assets/goodgirl-bottle.png" class="img-bottle">
             <h1 class="brand-logo">GOOD GIRL</h1>
-            <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
+            <div class="perfume-sub">EAU DE PARFUM</div>
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>La douceur et le pouvoir de séduction du jasmin renforcent encore l’éclat de Good Girl. Le côté mystérieux est révélé grâce au cacao riche et à l’enivrante fève tonka.</p>
-                <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Séductrice et Puissante<br>
-                <span class="highlight">Occasion :</span> Le jour et la nuit<br>
-                <span class="highlight">Famille olfactive :</span> AMBRÉE Ambrée Florale<br>
-                <span class="highlight">La fragrance :</span> Puissante et Provocante</p>
-                <h3>Le flacon</h3>
-                <p>Associant l’esthétique de la haute couture à l’expertise technique, l’emblématique talon aiguille Good Girl est à l’image des femmes puissantes.</p>
+                <p>La douceur du jasmin renforce l’éclat de Good Girl. Le côté mystérieux est révélé par le cacao.</p>
+                <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Puissante</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Ingrédients Principaux :</span> Jasmin, Tubéreuse, Fève Tonka<br>
-                <span class="highlight">Famille Olfactive :</span> AMBRÉE Ambrée Florale<br>
-                <span class="highlight">Notes de Tête :</span> Amande (Première impression 5-15 min)<br>
-                <span class="highlight">Notes de Cœur :</span> Jasmin d’Arabie & Tubéreuse<br>
-                <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao (Jusqu'à 6h)</p>
-                <ul>
-                    <li><span class="highlight">Notes de tête :</span> Première impression, dure entre 5 et 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Ressortent après la tête, durent 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Note qui reste le plus longtemps sur la peau.</li>
-                </ul>
+                <p><span class="highlight">Notes de Tête :</span> Amande<br>
+                <span class="highlight">Notes de Cœur :</span> Jasmin & Tubéreuse<br>
+                <span class="highlight">Notes de Fond :</span> Sillage sensuel, reste perceptible pendant 7h+.</p>
             </div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">GOOD GIRL</h4><p style="color:#555; font-size:10px; margin:2px 0">EAU DE PARFUM</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'; margin:0">GOOD GIRL</h4><p style="color:#555; font-size:10px">EAU DE PARFUM</p></div>
                     <img src="assets/gg-hand.jpg" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>± 80 RASHAT</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>± 160 RASHAT</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2">
@@ -307,8 +261,7 @@
 
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
         let currentIdx = 0;
-        const scrollBtn = document.getElementById('scrollBtn');
-        scrollBtn.onclick = () => {
+        document.getElementById('scrollBtn').onclick = () => {
             currentIdx = (currentIdx + 1) % sections.length;
             document.getElementById(sections[currentIdx]).scrollIntoView();
         };
