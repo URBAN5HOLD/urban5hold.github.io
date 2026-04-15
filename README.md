@@ -35,9 +35,7 @@
 
         .tech-notes { font-size: 0.75rem; color: #bbb; margin-top: 20px; line-height: 1.5; font-style: italic; border-top: 1px solid rgba(255,255,255,0.2) !important; padding-top: 15px; }
 
-        /* --- New Purchase Area (Minimalist & English) --- */
         .purchase-area { max-width: 1000px; margin: 80px auto 0; display: flex; gap: 50px; padding: 20px; align-items: flex-start; }
-        
         .details-side { width: 45%; }
         .product-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding-bottom: 10px; }
         .product-meta h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #fff; letter-spacing: 2px; }
@@ -80,115 +78,33 @@
     <div class="product-section sauv-t">
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center"><img src="assets/sauvage-bottle.png" class="img-bottle" onclick="zoom(this)"><h1 class="brand-logo">SAUVAGE</h1></div>
-        
-        <div class="row">
-            <div class="img-box"><img src="assets/sauvage-left.jpg" onclick="zoom(this)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>A high-fashion composition infused with wild freshness. The trail is of rare power, a raw elegance that reveals an authentic and true man.</p>
-                <p><b>For:</b> Him | <b>Style:</b> Raw & Noble | <b>Occasion:</b> Day & Night | <b>Family:</b> AROMATIC Fougère</p>
-                <h3>The Bottle</h3>
-                <p>A luxurious design object with clean, dark lines, reflecting the power of the desert at the magical hour of twilight.</p>
-            </div>
-        </div>
-
-        <div class="row rev">
-            <div class="img-box"><img src="assets/sauvage-right.jpg" onclick="zoom(this)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Main Ingredients:</b> Bergamot, Pepper, Ambroxan</p>
-                <p><b>Top Notes:</b> Calabria Bergamot</p>
-                <p><b>Heart Notes:</b> Sichuan Pepper & Lavender</p>
-                <p><b>Base Notes:</b> Ambroxan & Musk</p>
-                <div class="tech-notes">
-                    <p>* Top notes: First impression, lasts 5-15 minutes.</p>
-                    <p>* Heart notes: Emerges after top notes fade (20-60 min).</p>
-                    <p>* Base notes: The longest lasting scent (up to 6 hours).</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="purchase-area">
-            <div class="details-side">
-                <div class="product-meta">
-                    <div><h2>SAUVAGE ELIXIR</h2><p style="font-size:0.6rem; color:#666;">PREMIUM TRAVEL DECANT</p></div>
-                    <img src="assets/sauvage-hand.jpg" class="mini-thumb" onclick="zoom(this.src)">
-                </div>
-                <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 'sauv-in')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 'sauv-in')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div>
-                </div>
-            </div>
-            <div class="form-side">
-                <form>
-                    <input type="hidden" id="sauv-in" value="10ml">
-                    <input type="text" placeholder="FULL NAME" required>
-                    <input type="tel" placeholder="PHONE NUMBER" required>
-                    <input type="text" placeholder="CITY" required>
-                    <input type="text" placeholder="SHIPPING ADDRESS" required>
-                    <button type="submit" class="buy-btn">ORDER NOW | 319 DH</button>
-                </form>
-            </div>
-        </div>
+        <div class="row"><div class="img-box"><img src="assets/sauvage-left.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>A high-fashion composition infused with wild freshness. The trail is of rare power, a raw elegance that reveals an authentic and true man.</p><h3>The Bottle</h3><p>A luxurious design object with clean, dark lines, reflecting the power of the desert at the magical hour of twilight.</p></div></div>
+        <div class="row rev"><div class="img-box"><img src="assets/sauvage-right.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top Notes:</b> Calabria Bergamot</p><p><b>Heart Notes:</b> Sichuan Pepper & Lavender</p><p><b>Base Notes:</b> Ambroxan & Musk</p><div class="tech-notes"><p>* Top notes: First impression (5-15 min).</p><p>* Heart notes: Emerges after (20-60 min).</p><p>* Base notes: Longest lasting (up to 6 hours).</p></div></div></div>
+        <div class="purchase-area"><div class="details-side"><div class="product-meta"><div><h2>SAUVAGE ELIXIR</h2><p style="font-size:0.6rem; color:#666;">PREMIUM TRAVEL DECANT</p></div><img src="assets/sauvage-hand.jpg" class="mini-thumb" onclick="zoom(this.src)"></div><div class="size-container"><div class="size-item" onclick="selectSize(this, '5ml', 's1')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div><div class="size-item active" onclick="selectSize(this, '10ml', 's1')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div></div></div><div class="form-side"><form><input type="hidden" id="s1" value="10ml"><input type="text" placeholder="FULL NAME" required><input type="tel" placeholder="PHONE NUMBER" required><input type="text" placeholder="CITY" required><input type="text" placeholder="SHIPPING ADDRESS" required><button type="submit" class="buy-btn">ORDER NOW | 319 DH</button></form></div></div>
     </div>
 
     <div class="product-section stron-t">
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/stronger.mp4" type="video/mp4"></video></div>
         <div class="bottle-center"><img src="assets/stronger-bottle.png" class="img-bottle" onclick="zoom(this)"><h1 class="brand-logo">STRONGER WITH YOU</h1></div>
-        
-        <div class="row">
-            <div class="img-box"><img src="assets/stronger-left.jpg" onclick="zoom(this)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>A fragrance that lives in the present, carried by the energy of modernity. Unpredictable, it surprises with its originality, like the spicy accord of the top notes.</p>
-                <p><b>For:</b> Him | <b>Style:</b> Magnetic & Sensual | <b>Occasion:</b> Day & Night | <b>Family:</b> ORIENTAL Fougère</p>
-                <h3>The Bottle</h3>
-                <p>The clean lines and curves recall masculine shoulders. The round metallic cap adds a touch of modern elegance.</p>
-            </div>
-        </div>
+        <div class="row"><div class="img-box"><img src="assets/stronger-left.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>A fragrance that lives in the present, carried by the energy of modernity. Unpredictable, it surprises with its originality.</p><h3>The Bottle</h3><p>The clean lines and curves recall masculine shoulders. The round metallic cap adds a touch of modern elegance.</p></div></div>
+        <div class="row rev"><div class="img-box"><img src="assets/stronger-right.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top Notes:</b> Cardamom & Pink Pepper</p><p><b>Heart Notes:</b> Sage & Violet Leaf</p><p><b>Base Notes:</b> Vanilla & Chestnut</p><div class="tech-notes"><p>* Top notes: First impression (5-15 min).</p><p>* Heart notes: Emerges after (20-60 min).</p><p>* Base notes: Longest lasting (up to 6 hours).</p></div></div></div>
+        <div class="purchase-area"><div class="details-side"><div class="product-meta"><div><h2>STRONGER WITH YOU</h2><p style="font-size:0.6rem; color:#666;">INTENSE MALE FRAGRANCE</p></div><img src="assets/stronger-hand.jpg" class="mini-thumb" onclick="zoom(this.src)"></div><div class="size-container"><div class="size-item" onclick="selectSize(this, '5ml', 's2')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div><div class="size-item active" onclick="selectSize(this, '10ml', 's2')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div></div></div><div class="form-side"><form><input type="hidden" id="s2" value="10ml"><input type="text" placeholder="FULL NAME" required><input type="tel" placeholder="PHONE NUMBER" required><input type="text" placeholder="CITY" required><input type="text" placeholder="SHIPPING ADDRESS" required><button type="submit" class="buy-btn">ORDER NOW | 319 DH</button></form></div></div>
+    </div>
 
-        <div class="row rev">
-            <div class="img-box"><img src="assets/stronger-right.jpg" onclick="zoom(this)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Main Ingredients:</b> Cardamom, Sage, Vanilla</p>
-                <p><b>Top Notes:</b> Cardamom & Pink Pepper</p>
-                <p><b>Heart Notes:</b> Sage & Violet Leaf</p>
-                <p><b>Base Notes:</b> Vanilla & Chestnut</p>
-                <div class="tech-notes">
-                    <p>* Top notes: First impression (5-15 min).</p>
-                    <p>* Heart notes: Emerges after (20-60 min).</p>
-                    <p>* Base notes: Longest lasting (up to 6 hours).</p>
-                </div>
-            </div>
-        </div>
+    <div class="product-section libre-t">
+        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/libre.mp4" type="video/mp4"></video></div>
+        <div class="bottle-center"><img src="assets/libre-bottle.png" class="img-bottle" onclick="zoom(this)"><h1 class="brand-logo">LIBRE (EDP)</h1></div>
+        <div class="row"><div class="img-box"><img src="assets/libre-left.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>The perfume of freedom. A tension between the burning sensuality of Moroccan orange blossom and French lavender.</p><h3>The Bottle</h3><p>A couture bottle with the oversized Cassandre logo, incrusted in the glass like a precious jewel.</p></div></div>
+        <div class="row rev"><div class="img-box"><img src="assets/libre-right.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top Notes:</b> Mandarin & Lavender</p><p><b>Heart Notes:</b> Orange Blossom & Jasmine</p><p><b>Base Notes:</b> Madagascar Vanilla & Musk</p><div class="tech-notes"><p>* Top notes: First impression (5-15 min).</p><p>* Heart notes: Emerges after (20-60 min).</p><p>* Base notes: Longest lasting (up to 6 hours).</p></div></div></div>
+        <div class="purchase-area"><div class="details-side"><div class="product-meta"><div><h2>YSL LIBRE EDP</h2><p style="font-size:0.6rem; color:#666;">CHIC FEMALE FRAGRANCE</p></div><img src="assets/libre-hand.jpg" class="mini-thumb" onclick="zoom(this.src)"></div><div class="size-container"><div class="size-item" onclick="selectSize(this, '5ml', 's3')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div><div class="size-item active" onclick="selectSize(this, '10ml', 's3')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div></div></div><div class="form-side"><form><input type="hidden" id="s3" value="10ml"><input type="text" placeholder="FULL NAME" required><input type="tel" placeholder="PHONE NUMBER" required><input type="text" placeholder="CITY" required><input type="text" placeholder="SHIPPING ADDRESS" required><button type="submit" class="buy-btn">ORDER NOW | 319 DH</button></form></div></div>
+    </div>
 
-        <div class="purchase-area">
-            <div class="details-side">
-                <div class="product-meta">
-                    <div><h2>STRONGER WITH YOU</h2><p style="font-size:0.6rem; color:#666;">INTENSE MALE FRAGRANCE</p></div>
-                    <img src="assets/stronger-hand.jpg" class="mini-thumb" onclick="zoom(this.src)">
-                </div>
-                <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 'stron-in')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 'stron-in')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div>
-                </div>
-            </div>
-            <div class="form-side">
-                <form>
-                    <input type="hidden" id="stron-in" value="10ml">
-                    <input type="text" placeholder="FULL NAME" required>
-                    <input type="tel" placeholder="PHONE NUMBER" required>
-                    <input type="text" placeholder="CITY" required>
-                    <input type="text" placeholder="SHIPPING ADDRESS" required>
-                    <button type="submit" class="buy-btn">ORDER NOW | 319 DH</button>
-                </form>
-            </div>
-        </div>
+    <div class="product-section gg-t">
+        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/goodgirl.mp4" type="video/mp4"></video></div>
+        <div class="bottle-center"><img src="assets/goodgirl-bottle.png" class="img-bottle" onclick="zoom(this)"><h1 class="brand-logo">GOOD GIRL</h1></div>
+        <div class="row"><div class="img-box"><img src="assets/gg-detail-left.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>The sweetness and seduction power of jasmine. The mysterious side is revealed through rich cocoa and heady tonka bean.</p><h3>The Bottle</h3><p>The iconic Good Girl stiletto is the image of the powerful women who inspire its silhouette.</p></div></div>
+        <div class="row rev"><div class="img-box"><img src="assets/gg-detail-right.jpg" onclick="zoom(this)"></div><div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top Notes:</b> Almond</p><p><b>Heart Notes:</b> Jasmine Sambac & Tuberose</p><p><b>Base Notes:</b> Tonka Bean & Cocoa</p><div class="tech-notes"><p>* Top notes: First impression (5-15 min).</p><p>* Heart notes: Emerges after (20-60 min).</p><p>* Base notes: Longest lasting (up to 6 hours).</p></div></div></div>
+        <div class="purchase-area"><div class="details-side"><div class="product-meta"><div><h2>CH GOOD GIRL</h2><p style="font-size:0.6rem; color:#666;">POWDERED SEDUCTION</p></div><img src="assets/gg-hand.jpg" class="mini-thumb" onclick="zoom(this.src)"></div><div class="size-container"><div class="size-item" onclick="selectSize(this, '5ml', 's4')"><div class="size-box"><span>5ML</span><p class="sprays">~ 75 SPRAYS</p></div></div><div class="size-item active" onclick="selectSize(this, '10ml', 's4')"><div class="size-box"><span>10ML</span><p class="sprays">~ 150 SPRAYS</p></div></div></div></div><div class="form-side"><form><input type="hidden" id="s4" value="10ml"><input type="text" placeholder="FULL NAME" required><input type="tel" placeholder="PHONE NUMBER" required><input type="text" placeholder="CITY" required><input type="text" placeholder="SHIPPING ADDRESS" required><button type="submit" class="buy-btn">ORDER NOW | 319 DH</button></form></div></div>
     </div>
 
     <script>
