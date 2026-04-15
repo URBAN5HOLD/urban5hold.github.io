@@ -34,20 +34,20 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-       .scroll-trigger { 
-            position: fixed; 
-            bottom: 18%; /* هاد القيمة غاتطلعو لبلاصة مريحة للإبهام */
-            right: 25px; 
-            width: 50px; 
-            height: 50px; 
-            z-index: 10001; 
-            cursor: pointer;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            background: rgba(0,0,0,0.2); 
-            border-radius: 50%;
-        }
+      .scroll-trigger { 
+    position: fixed; 
+    bottom: 20%; /* طلعناه لـ 20% باش يجي مريح للإبهام */
+    right: 25px; 
+    width: 50px; 
+    height: 50px; 
+    z-index: 10001; 
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: rgba(0,0,0,0.2); 
+    border-radius: 50%;
+}
         
         .arrow-icon { 
             width: 18px; 
@@ -356,13 +356,20 @@
             });
         });
 
-        scrollBtn.onclick = () => {
-            if(currentIdx === sections.length - 1) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                document.getElementById(sections[currentIdx + 1]).scrollIntoView({ behavior: 'smooth' });
-            }
-        };
+       scrollBtn.onclick = () => {
+    if(currentIdx === sections.length - 1) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        const nextSection = document.getElementById(sections[currentIdx + 1]);
+        // كنقصو 70px (تقريباً طول اللوغو) باش يجي الفيديو هو هداك مع الحافة
+        const offset = nextSection.offsetTop - 70; 
+        
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+        });
+    }
+};
     </script>
 </body>
 </html>
