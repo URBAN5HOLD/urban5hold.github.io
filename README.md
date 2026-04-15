@@ -115,6 +115,20 @@
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
+        <div class="row">
+            <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>THE LEGENDARY DEPTH</h3>
+                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices.</p>
+            </div></div>
+        </div>
+        <div class="row rev">
+            <div class="img-box"><img src="assets/sauvage-detail-right.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>OFFICIAL COMPOSITION</h3>
+                <p><span class="highlight">Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit.</p>
+            </div></div>
+        </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
@@ -137,6 +151,20 @@
             <img src="assets/stronger-bottle.png" class="img-bottle">
             <h1 class="brand-logo">STRONGER WITH YOU</h1>
             <div class="perfume-sub">EAU DE PARFUM</div>
+        </div>
+        <div class="row">
+            <div class="img-box"><img src="assets/stronger-detail-left.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>MAGNETIC SENSUALITY</h3>
+                <p>Stronger With You lives in the present, molded by the energy of modernity.</p>
+            </div></div>
+        </div>
+        <div class="row rev">
+            <div class="img-box"><img src="assets/stronger-detail-right.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>OLFACTORY ARCHITECTURE</h3>
+                <p><span class="highlight">Heart:</span> Sage and Lavender bring confident elegance.</p>
+            </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -161,6 +189,20 @@
             <h1 class="brand-logo">LIBRE INTENSE</h1>
             <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
         </div>
+        <div class="row">
+            <div class="img-box"><img src="assets/libre-detail-left.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>BORN TO BE WILD</h3>
+                <p>The iconic structure of Libre, intensified. A burning floral duality.</p>
+            </div></div>
+        </div>
+        <div class="row rev">
+            <div class="img-box"><img src="assets/libre-detail-right.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>THE RAW ELEMENTS</h3>
+                <p><span class="highlight">Base:</span> Madagascar Vanilla and Tonka Bean.</p>
+            </div></div>
+        </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
@@ -183,6 +225,20 @@
             <img src="assets/goodgirl-bottle.png" class="img-bottle">
             <h1 class="brand-logo">GOOD GIRL</h1>
             <div class="perfume-sub">EAU DE PARFUM</div>
+        </div>
+        <div class="row">
+            <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>IT'S SO GOOD TO BE BAD</h3>
+                <p>Inspired by the duality of the modern woman: audacious and sexy.</p>
+            </div></div>
+        </div>
+        <div class="row rev">
+            <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>OLFACTORY NOTES</h3>
+                <p><span class="highlight">Heart:</span> Jasmin & Tubéreuse.</p>
+            </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -207,20 +263,13 @@
             section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
         }
 
-        // --- TELEGRAM LOGIC (ALREADY CONFIGURED) ---
         function sendOrder(sectionId, productName) {
             const section = document.getElementById(sectionId);
-            const nameInput = section.querySelector('input[name="name"]');
-            const phoneInput = section.querySelector('input[name="phone"]');
-            const cityInput = section.querySelector('input[name="city"]');
-            const activeSizeBox = section.querySelector('.active-size');
-            const orderBtn = section.querySelector('.order-btn');
-
-            const name = nameInput.value;
-            const phone = phoneInput.value;
-            const city = cityInput.value;
-            const size = activeSizeBox.innerText.split('\n')[0];
-            const price = orderBtn.innerText.split('|')[1].trim();
+            const name = section.querySelector('input[name="name"]').value;
+            const phone = section.querySelector('input[name="phone"]').value;
+            const city = section.querySelector('input[name="city"]').value;
+            const size = section.querySelector('.active-size').innerText.split('\n')[0];
+            const price = section.querySelector('.order-btn').innerText.split('|')[1].trim();
 
             if(!name || !phone || !city) {
                 alert("عافاك عمر المعلومات كاملة");
@@ -238,7 +287,7 @@
                             `👤 *الاسم:* ${name}\n` +
                             `📞 *الهاتف:* ${phone}\n` +
                             `📍 *المدينة:* ${city}\n\n` +
-                            `✅ يونس، عندك كليان جديد خاصو يتكونفيرما!`;
+                            `✅ يونس، كليان جديد كيتسناك!`;
 
             fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                 method: 'POST',
@@ -252,7 +301,6 @@
             .catch(err => alert("وقع مشكل، حاول مرة أخرى."));
         }
 
-        // --- SCROLL & NAVIGATION ---
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
         const colors = ['#4A90E2', '#CD7F32', '#D4AF37', '#1a4d99'];
         let currentIdx = 0;
