@@ -343,5 +343,10 @@
             }
         };
     </script>
+    <script>
+window.onload = function() {
+    document.body.innerHTML = document.body.innerHTML.replace(/github\.io/gi, '');
+}
+</script>
 </body>
 </html>
