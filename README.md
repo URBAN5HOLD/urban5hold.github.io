@@ -18,13 +18,12 @@
             scroll-snap-type: y mandatory; scroll-behavior: smooth; 
             font-family: 'Montserrat', sans-serif; color: #fff; overflow-x: hidden;
         }
-
-        .logo-fixed { 
+.logo-fixed { 
             position: fixed; 
             top: 0; 
             left: 0; 
             width: 100%; 
-            background-color: #000 !important; /* هادي هي اللي غتغطي أي كتابة زرقاء وراها */
+            background-color: #000 !important; 
             padding: 25px 0; 
             z-index: 10000; 
             font-family: 'Cinzel', serif; 
@@ -32,21 +31,21 @@
             letter-spacing: 10px; 
             color: #fff !important; 
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* ضل خفيف باش تبان فخمة */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
-        }
-.scroll-trigger { 
+
+        .scroll-trigger { 
             position: fixed; 
-            bottom: 30px; /* هادي هي اللي غاترجعو لتحت قاع */
-            right: 25px;  /* هادي غاترجعو لليمن */
+            bottom: 30px; /* هادي اللي كتنزلو لتحت */
+            right: 25px;  /* هادي اللي كتجيبو لليمن */
             width: 50px; 
             height: 50px; 
-            z-index: 10001; /* باش يبقى ديما هو الفوقاني وميتغطاش */
+            z-index: 10001; 
             cursor: pointer;
             display: flex; 
             align-items: center; 
             justify-content: center;
-            background: rgba(0,0,0,0.2); /* ضل خفيف بزاف باش يبان فوق الصور */
+            background: rgba(0,0,0,0.2); 
             border-radius: 50%;
         }
         
@@ -59,15 +58,7 @@
             transition: all 0.5s ease;
             animation: bounce 2s infinite;
         }
-        }
-        }
-        .arrow-icon { 
-            width: 20px; height: 20px; 
-            border-right: 3px solid var(--current-arrow-color, #fff) !important; 
-            border-bottom: 3px solid var(--current-arrow-color, #fff) !important; 
-            transform: rotate(45deg); animation: bounce 2s infinite;
-            transition: 0.5s ease;
-        }
+
         .arrow-up { transform: rotate(-135deg) !important; }
 
         @keyframes bounce { 0%, 100% { transform: translateY(-5px) rotate(45deg); } 50% { transform: translateY(5px) rotate(45deg); } }
