@@ -2,11 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Velooria Beauty | Exclusive Decants</title>
+    <title>Velooria Beauty | Luxury Perfumes</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* التنقيزة ومنع التحرك الجانبي نهائياً */
+        /* 1. ضبط التنقيزة ومنع الهروب الجانبي */
         html, body { 
             width: 100%; 
             margin: 0; padding: 0;
@@ -27,59 +27,62 @@
             position: relative; 
             background: #000;
             overflow: hidden;
-            padding-bottom: 120px;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 60px;
         }
 
-        /* الفيديو الأصلي عريض 100% */
-        .v-header { width: 100%; position: relative; overflow: hidden; }
-        .bg-v { width: 100%; height: auto; display: block; }
+        /* 2. هندسة الفيديو: عرض 100% وطول سينمائي */
+        .v-header { width: 100%; height: 55vh; position: relative; overflow: hidden; }
+        .bg-v { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        .bottle-center { text-align: center; padding: 60px 0; }
-        .img-bottle { width: 42%; max-width: 190px; cursor: zoom-in; margin: 0 auto; display: block; }
-        .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; margin-top: 15px; letter-spacing: 6px; text-transform: uppercase; line-height: 1.2; }
-        .perfume-type { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; font-weight: 400; margin-top: 5px; opacity: 0.9; }
+        .bottle-center { text-align: center; padding: 40px 0; }
+        .img-bottle { width: 42%; max-width: 180px; cursor: zoom-in; margin: 0 auto; display: block; }
+        .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff; margin-top: 10px; letter-spacing: 5px; text-transform: uppercase; }
+        .perfume-type { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: var(--color); letter-spacing: 3px; font-weight: 400; margin-top: 5px; text-transform: uppercase; }
 
-        /* صفوف المعلومات مع الضباب الملون */
-        .row { display: flex; align-items: center; width: 100%; padding: 60px 5%; position: relative; }
+        /* 3. المعلومات كاملة مع الضباب الملون */
+        .row { display: flex; align-items: center; width: 100%; padding: 40px 5%; position: relative; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 50%; display: flex; justify-content: center; z-index: 2; }
-        .img-box img { width: 90%; max-width: 480px; border-radius: 2px; cursor: zoom-in; }
+        .img-box img { width: 95%; max-width: 450px; border-radius: 2px; cursor: zoom-in; }
         
-        .txt-box { width: 50%; padding: 0 5%; text-align: left; position: relative; color: #fff; z-index: 2; }
-        .glow-effect { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150%; height: 150%; background: radial-gradient(circle, var(--glow) 0%, transparent 70%); opacity: 0.25; z-index: -1; pointer-events: none; }
+        .txt-box { width: 50%; padding: 0 4%; text-align: left; position: relative; color: #fff; z-index: 2; }
+        .glow-effect { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140%; height: 140%; background: radial-gradient(circle, var(--glow) 0%, transparent 70%); opacity: 0.28; z-index: -1; pointer-events: none; }
 
-        h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: #fff; margin-bottom: 20px; text-transform: uppercase; display: inline-block; }
-        p { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.7; color: #eee; margin-bottom: 12px; }
+        h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; margin-bottom: 12px; text-transform: uppercase; border-bottom: 0.5px solid var(--color) !important; display: inline-block; }
+        p { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; line-height: 1.6; color: #eee; margin-bottom: 8px; }
         b { color: var(--color); font-weight: 600; }
 
-        .tech-notes { font-size: 0.75rem; color: #888; margin-top: 25px; padding-top: 20px; border-top: 0.5px solid rgba(255,255,255,0.15) !important; line-height: 1.6; }
+        .tech-notes { font-size: 0.75rem; color: #999; margin-top: 15px; padding-top: 15px; border-top: 0.5px solid rgba(255,255,255,0.1) !important; }
 
-        /* منطقة الشراء - بدون خطوط عريضة */
-        .purchase-area { max-width: 1000px; margin: 80px auto 0; display: flex; gap: 50px; padding: 20px; align-items: flex-start; }
+        /* 4. منطقة الشراء - تصميم رقيق بدون خطوط عريضة */
+        .purchase-area { max-width: 1000px; margin: 50px auto 0; display: flex; gap: 40px; padding: 20px; align-items: flex-start; justify-content: center; width: 100%; }
         .details-side { width: 45%; }
-        .form-side { width: 55%; }
+        .form-side { width: 50%; }
         
-        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 0.5px solid rgba(255,255,255,0.1) !important; padding-bottom: 15px; }
-        .mini-thumb { width: 65px; height: 65px; object-fit: cover; border: 0.5px solid rgba(255,255,255,0.1) !important; }
+        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 0.5px solid rgba(255,255,255,0.1) !important; padding-bottom: 15px; }
+        .mini-thumb { width: 65px; height: 65px; object-fit: cover; }
         
-        .size-container { display: flex; gap: 15px; margin-top: 25px; }
+        .size-container { display: flex; gap: 12px; margin-top: 15px; }
         .size-item { flex: 1; cursor: pointer; text-align: center; }
-        .size-box { padding: 18px; border: 0.5px solid rgba(255,255,255,0.2) !important; border-radius: 1px; transition: 0.4s; }
+        .size-box { padding: 15px; border: 0.5px solid rgba(255,255,255,0.2) !important; border-radius: 2px; }
         .size-item.active .size-box { border-color: var(--color) !important; background: rgba(255,255,255,0.03); color: var(--color); }
 
-        .form-side input { width: 100%; padding: 20px; margin-bottom: 15px; background: transparent; color: #fff; border-bottom: 0.5px solid rgba(255,255,255,0.15) !important; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
-        .buy-btn { width: 100%; padding: 25px; background: #fff; color: #000; font-weight: 800; font-size: 1.1rem; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: 0.4s; }
-        .buy-btn:hover { background: var(--color); color: #fff; }
+        .form-side input { width: 100%; padding: 18px; margin-bottom: 12px; background: transparent; color: #fff; border-bottom: 0.5px solid rgba(255,255,255,0.15) !important; font-size: 0.9rem; }
+        .buy-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-weight: 800; font-size: 1rem; cursor: pointer; letter-spacing: 2px; text-transform: uppercase; }
 
         .zoom-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); display: none; justify-content: center; align-items: center; z-index: 2000; }
 
         @media (max-width: 900px) {
-            .row, .row.rev { flex-direction: column; text-align: center; padding: 50px 7%; }
+            .row, .row.rev { flex-direction: column; text-align: center; padding: 30px 6%; }
             .img-box, .txt-box { width: 100%; }
-            .purchase-area { flex-direction: column-reverse; width: 100%; padding: 20px; }
+            .purchase-area { flex-direction: column-reverse; width: 90%; margin: 40px auto; }
             .details-side, .form-side { width: 100%; }
+            .v-header { height: 45vh; } /* فيديو أقصر شوية في التلفون باش تبان الهضرة */
         }
 
+        /* ألوان الهوية البصرية لكل عطر */
         .sauv-t { --glow: #0044ff; --color: #4A90E2; }
         .stron-t { --glow: #8b4513; --color: #CD7F32; }
         .libre-t { --glow: #b8860b; --color: #D4AF37; }
@@ -98,43 +101,23 @@
             <h1 class="brand-logo">SAUVAGE</h1>
             <div class="perfume-type">ELIXIR / EXTRAIT DE PARFUM</div>
         </div>
-        
         <div class="row">
             <div class="img-box"><img src="assets/sauvage-left.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>A high-fashion composition infused with wild freshness. Raw elegance at its peak.</p>
-                <h3>The Bottle</h3>
-                <p>Luxurious dark lines reflecting the power of the desert at twilight. A legendary design.</p>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>A high-fashion composition infused with wild freshness. Raw elegance.</p><h3>The Bottle</h3><p>Dark lines reflecting the power of the desert at twilight.</p></div>
         </div>
-        
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-right.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Top:</b> Reggio di Calabria Bergamot</p>
-                <p><b>Heart:</b> Sichuan Pepper & Lavender</p>
-                <p><b>Base:</b> Rare Ambroxan & Vanilla Absolute</p>
-                <div class="tech-notes">
-                    <p>* Top Notes: First impression, lasts 15 min.</p>
-                    <p>* Heart Notes: The soul of perfume, lasts 1 hour.</p>
-                    <p>* Base Notes: The deep trail, lasts up to 8 hours.</p>
-                </div>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top:</b> Bergamot</p><p><b>Heart:</b> Sichuan Pepper</p><p><b>Base:</b> Ambroxan</p><div class="tech-notes"><p>* Top Notes: First 15 min.</p><p>* Heart Notes: Up to 1 hour.</p><p>* Base Notes: Longest lasting trail.</p></div></div>
         </div>
-
         <div class="purchase-area">
             <div class="details-side">
-                <div class="product-meta"><div><h2>SAUVAGE ELIXIR</h2><p style="font-size:10px; color:#555;">VELOORIA EXCLUSIVE</p></div><img src="assets/sauvage-hand.jpg" class="mini-thumb"></div>
+                <div class="product-meta"><div><h2>SAUVAGE ELIXIR</h2><p style="font-size:10px; color:#555;">PREMIUM QUALITY</p></div><img src="assets/sauvage-hand.jpg" class="mini-thumb"></div>
                 <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 's1')"><div class="size-box"><span>5ML</span><p style="font-size:9px">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 's1')"><div class="size-box"><span>10ML</span><p style="font-size:9px">~ 150 SPRAYS</p></div></div>
+                    <div class="size-item" onclick="selectSize(this, '5ml', 's1')"><div class="size-box"><span>5ML</span></div></div>
+                    <div class="size-item active" onclick="selectSize(this, '10ml', 's1')"><div class="size-box"><span>10ML</span></div></div>
                 </div>
             </div>
-            <div class="form-side"><form><input type="hidden" id="s1" value="10ml"><input type="text" placeholder="YOUR FULL NAME"><input type="tel" placeholder="PHONE NUMBER"><input type="text" placeholder="CITY"><button class="buy-btn">GET IT NOW | 319 DH</button></form></div>
+            <div class="form-side"><form><input type="hidden" id="s1" value="10ml"><input type="text" placeholder="NAME"><input type="tel" placeholder="PHONE"><input type="text" placeholder="CITY"><button class="buy-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </div>
 
@@ -147,34 +130,21 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/stronger-left.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>A magnetic energy. Bold, unpredictable, and surprisingly original.</p>
-                <h3>The Concept</h3>
-                <p>The power of togetherness. A sensual fragrance that lingers in the memory.</p>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>Magnetic energy. Bold, unpredictable, and original.</p><h3>The Concept</h3><p>The power of togetherness. A sensual fragrance.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-right.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Top:</b> Cardamom & Pink Pepper</p>
-                <p><b>Heart:</b> Lavender & Sage</p>
-                <p><b>Base:</b> Smoky Vanilla & Chestnut</p>
-                <div class="tech-notes"><p>* Long-lasting masculine trail for more than 8 hours.</p></div>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top:</b> Cardamom</p><p><b>Heart:</b> Lavender</p><p><b>Base:</b> Vanilla & Chestnut</p><div class="tech-notes"><p>* Masculine trail lasting 8+ hours.</p></div></div>
         </div>
         <div class="purchase-area">
             <div class="details-side">
-                <div class="product-meta"><div><h2>SWY ABSOLUTELY</h2><p style="font-size:10px; color:#555;">INTENSE COLLECTION</p></div><img src="assets/stronger-hand.jpg" class="mini-thumb"></div>
+                <div class="product-meta"><div><h2>SWY ABSOLUTELY</h2><p style="font-size:10px; color:#555;">INTENSE MALE</p></div><img src="assets/stronger-hand.jpg" class="mini-thumb"></div>
                 <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 's2')"><div class="size-box"><span>5ML</span><p style="font-size:9px">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 's2')"><div class="size-box"><span>10ML</span><p style="font-size:9px">~ 150 SPRAYS</p></div></div>
+                    <div class="size-item" onclick="selectSize(this, '5ml', 's2')"><div class="size-box"><span>5ML</span></div></div>
+                    <div class="size-item active" onclick="selectSize(this, '10ml', 's2')"><div class="size-box"><span>10ML</span></div></div>
                 </div>
             </div>
-            <div class="form-side"><form><input type="hidden" id="s2" value="10ml"><input type="text" placeholder="YOUR FULL NAME"><input type="tel" placeholder="PHONE NUMBER"><input type="text" placeholder="CITY"><button class="buy-btn">GET IT NOW | 319 DH</button></form></div>
+            <div class="form-side"><form><input type="hidden" id="s2" value="10ml"><input type="text" placeholder="NAME"><input type="tel" placeholder="PHONE"><input type="text" placeholder="CITY"><button class="buy-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </div>
 
@@ -187,34 +157,21 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/libre-left.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>The scent of freedom. A floral masterpiece mixing orange blossom and lavender.</p>
-                <h3>The Style</h3>
-                <p>Designed for the bold and modern woman who lives by her own rules.</p>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>The scent of freedom. Mixing orange blossom and lavender.</p><h3>The Style</h3><p>For the bold woman who lives by her own rules.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-right.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Top:</b> Mandarin & French Lavender</p>
-                <p><b>Heart:</b> Moroccan Orange Blossom</p>
-                <p><b>Base:</b> Madagascar Vanilla & Musk</p>
-                <div class="tech-notes"><p>* A sophisticated trail that lasts up to 7 hours.</p></div>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top:</b> Mandarin</p><p><b>Heart:</b> Orange Blossom</p><p><b>Base:</b> Vanilla & Musk</p><div class="tech-notes"><p>* Sophisticated trail up to 7 hours.</p></div></div>
         </div>
         <div class="purchase-area">
             <div class="details-side">
-                <div class="product-meta"><div><h2>YSL LIBRE EDP</h2><p style="font-size:10px; color:#555;">FEMALE ELEGANCE</p></div><img src="assets/libre-hand.jpg" class="mini-thumb"></div>
+                <div class="product-meta"><div><h2>YSL LIBRE EDP</h2><p style="font-size:10px; color:#555;">CHIC FEMALE</p></div><img src="assets/libre-hand.jpg" class="mini-thumb"></div>
                 <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 's3')"><div class="size-box"><span>5ML</span><p style="font-size:9px">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 's3')"><div class="size-box"><span>10ML</span><p style="font-size:9px">~ 150 SPRAYS</p></div></div>
+                    <div class="size-item" onclick="selectSize(this, '5ml', 's3')"><div class="size-box"><span>5ML</span></div></div>
+                    <div class="size-item active" onclick="selectSize(this, '10ml', 's3')"><div class="size-box"><span>10ML</span></div></div>
                 </div>
             </div>
-            <div class="form-side"><form><input type="hidden" id="s3" value="10ml"><input type="text" placeholder="YOUR FULL NAME"><input type="tel" placeholder="PHONE NUMBER"><input type="text" placeholder="CITY"><button class="buy-btn">GET IT NOW | 319 DH</button></form></div>
+            <div class="form-side"><form><input type="hidden" id="s3" value="10ml"><input type="text" placeholder="NAME"><input type="tel" placeholder="PHONE"><input type="text" placeholder="CITY"><button class="buy-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </div>
 
@@ -227,34 +184,21 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/gg-detail-left.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>The Fragrance</h3>
-                <p>Mysterious and sensual. A duality of jasmine and rich, dark cocoa.</p>
-                <h3>The Power</h3>
-                <p>Empowerment in a bottle. For the woman who knows when to be good and when to be bad.</p>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p>Mysterious and sensual. Jasmine and rich cocoa.</p><h3>The Power</h3><p>Empowerment in a bottle. Good and bad.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg" onclick="zoom(this.src)"></div>
-            <div class="txt-box">
-                <div class="glow-effect"></div>
-                <h3>Olfactory Notes</h3>
-                <p><b>Top:</b> Fresh Almond & Coffee</p>
-                <p><b>Heart:</b> Sambac Jasmine & Tuberose</p>
-                <p><b>Base:</b> Roasted Tonka Bean & Cocoa</p>
-                <div class="tech-notes"><p>* Heavy-hitting longevity of 8+ hours on skin.</p></div>
-            </div>
+            <div class="txt-box"><div class="glow-effect"></div><h3>Olfactory Notes</h3><p><b>Top:</b> Almond & Coffee</p><p><b>Heart:</b> Jasmine Sambac</p><p><b>Base:</b> Tonka Bean & Cocoa</p><div class="tech-notes"><p>* Long-lasting trail of 8+ hours.</p></div></div>
         </div>
         <div class="purchase-area">
             <div class="details-side">
-                <div class="product-meta"><div><h2>CH GOOD GIRL</h2><p style="font-size:10px; color:#555;">SEDUCTIVE COLLECTION</p></div><img src="assets/gg-hand.jpg" class="mini-thumb"></div>
+                <div class="product-meta"><div><h2>CH GOOD GIRL</h2><p style="font-size:10px; color:#555;">SEDUCTIVE FEMALE</p></div><img src="assets/gg-hand.jpg" class="mini-thumb"></div>
                 <div class="size-container">
-                    <div class="size-item" onclick="selectSize(this, '5ml', 's4')"><div class="size-box"><span>5ML</span><p style="font-size:9px">~ 75 SPRAYS</p></div></div>
-                    <div class="size-item active" onclick="selectSize(this, '10ml', 's4')"><div class="size-box"><span>10ML</span><p style="font-size:9px">~ 150 SPRAYS</p></div></div>
+                    <div class="size-item" onclick="selectSize(this, '5ml', 's4')"><div class="size-box"><span>5ML</span></div></div>
+                    <div class="size-item active" onclick="selectSize(this, '10ml', 's4')"><div class="size-box"><span>10ML</span></div></div>
                 </div>
             </div>
-            <div class="form-side"><form><input type="hidden" id="s4" value="10ml"><input type="text" placeholder="YOUR FULL NAME"><input type="tel" placeholder="PHONE NUMBER"><input type="text" placeholder="CITY"><button class="buy-btn">GET IT NOW | 319 DH</button></form></div>
+            <div class="form-side"><form><input type="hidden" id="s4" value="10ml"><input type="text" placeholder="NAME"><input type="tel" placeholder="PHONE"><input type="text" placeholder="CITY"><button class="buy-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </div>
 
