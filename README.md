@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -8,33 +7,45 @@
     
     <style>
         :root { --bg: #000; }
-        html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background-color: var(--bg); scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+        
+        /* نحيدو أي بياض من الصفحة كاملة */
+        html, body { 
+            width: 100%; margin: 0; padding: 0; overflow-x: hidden; 
+            background-color: #000 !important;
+            scroll-snap-type: y mandatory; scroll-behavior: smooth; 
+        }
+        
         * { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
 
-        /* تعديل الشعار: حيدت أي خط أو خلفية بيضاء تحتو */
-        .logo-fixed { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 8px; color: #fff; border: none !important; background: none !important; }
+        /* الشعار شفاف تماماً وبدون أي خطوط */
+        .logo-fixed { 
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%); 
+            z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.1rem; 
+            letter-spacing: 8px; color: #fff; background: transparent !important; 
+            border: none !important; box-shadow: none !important;
+        }
 
         .scroll-trigger { position: fixed; bottom: 15%; right: 25px; width: 50px; height: 50px; z-index: 2000; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .arrow-icon { width: 20px; height: 20px; border-right: 2.5px solid var(--current-color); border-bottom: 2.5px solid var(--current-color); transform: rotate(45deg); animation: bounce 2s infinite; }
         @keyframes bounce { 0%, 100% { transform: rotate(45deg) translate(0,0); } 50% { transform: rotate(45deg) translate(5px,5px); } }
 
-        .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; position: relative; padding-bottom: 60px; }
-        .v-header-sauvage { width: 85%; margin: 0 auto; line-height: 0; }
+        .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; position: relative; padding-bottom: 60px; background: #000; }
         .v-header { width: 100%; line-height: 0; }
+        .v-header-sauvage { width: 85%; margin: 0 auto; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; object-fit: contain; }
 
         .bottle-center { text-align: center; padding: 30px 0; }
-        .img-bottle { width: 40%; max-width: 150px; margin: 0 auto; }
+        .img-bottle { width: 40%; max-width: 150px; margin: 0 auto; display: block; }
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; }
 
         .row { display: flex; align-items: center; width: 100%; padding: 40px 8%; gap: 50px; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 50%; }
-        .img-box img { width: 100%; border-radius: 2px; }
+        .img-box img { width: 100%; border-radius: 2px; border: none !important; }
         
         .txt-box { width: 50%; color: #fff; text-align: left; }
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; }
+        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; border: none !important; }
         .txt-box p { font-size: 0.85rem; line-height: 1.7; color: #ccc; font-weight: 300; margin-bottom: 12px; }
         .highlight { color: #fff; font-weight: 600; }
         
@@ -47,7 +58,7 @@
         .size-container { display: flex; gap: 15px; margin-top: 15px; }
         .size-box { flex: 1; padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: center; color: #fff; cursor: pointer; transition: 0.3s; }
         .size-box span { display: block; font-size: 0.65rem; color: #888; margin-top: 6px; letter-spacing: 1px; }
-        .active-size { border-color: var(--color); background: rgba(255,255,255,0.05); }
+        .active-size { border-color: var(--color) !important; background: rgba(255,255,255,0.05); }
 
         input { 
             width: 100%; padding: 20px 0; margin-bottom: 15px; 
@@ -55,8 +66,6 @@
             border: none !important; border-bottom: 1px solid rgba(255,255,255,0.2) !important; 
             font-family: 'Montserrat'; font-size: 0.9rem; border-radius: 0;
         }
-        input::placeholder { color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
-        
         .order-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-family: 'Montserrat'; font-weight: 800; font-size: 1.1rem; cursor: pointer; letter-spacing: 3px; border: none; margin-top: 15px; }
 
         @media (max-width: 900px) {
@@ -88,10 +97,7 @@
             <div class="txt-box">
                 <h3>La fragrance</h3>
                 <p>Sauvage Elixir réinterprète la signature iconique de Sauvage avec une concentration inouïe. Une fraîcheur poussée à l'extrême qui se mêle à un cœur d'épices sur mesure.</p>
-                <p><span class="highlight">Pour :</span> Lui<br>
-                <span class="highlight">Il est :</span> Puissant et Noble<br>
-                <span class="highlight">Occasion :</span> Soirées d'Exception<br>
-                <span class="highlight">Famille :</span> AROMATIQUE Épicée</p>
+                <p><span class="highlight">Pour :</span> Lui<br><span class="highlight">Il est :</span> Puissant et Noble<br><span class="highlight">Occasion :</span> Soirées d'Exception</p>
                 <h3>Le flacon</h3>
                 <p>Le flacon en verre laqué d'un bleu nuit profond est aussi précieux qu'une pièce de joaillerie.</p>
             </div>
@@ -140,12 +146,9 @@
             <div class="txt-box">
                 <h3>La fragrance</h3>
                 <p>Cette fragrance raconte l’histoire d’un homme fort, épris d’une passion vibrante. Un parfum boisé et ambré d'une sensualité irrésistible.</p>
-                <p><span class="highlight">Pour :</span> Lui<br>
-                <span class="highlight">Il est :</span> Captivant et Audacieux<br>
-                <span class="highlight">Occasion :</span> Quotidien & Rendez-vous<br>
-                <span class="highlight">Famille :</span> AMBRÉE Fougère</p>
+                <p><span class="highlight">Pour :</span> Lui<br><span class="highlight">Il est :</span> Captivant et Audacieux</p>
                 <h3>Le flacon</h3>
-                <p>Un design aux lignes épurées et masculines, surmonté du bouchون iconique enlacé.</p>
+                <p>Un design aux lignes épurées et masculines, surmonté du bouchon iconique enlacé.</p>
             </div>
         </div>
         <div class="row rev">
@@ -158,7 +161,7 @@
                 <span class="highlight">Notes de Fond :</span> Vanille & Châtaigne Sucrée</p>
                 <ul class="note-list">
                     <li>* Notes de tête : Première impression (5-15 min).</li>
-                    <li>* Notes de cœur : Ressortent après 20-60 min.</li>
+                    <li>* Notes de cœur : Ressortent بعد 20-60 min.</li>
                     <li>* Notes de fond : Signature longue durée (jusqu'à 8h+).</li>
                 </ul>
             </div>
@@ -192,10 +195,7 @@
             <div class="txt-box">
                 <h3>La fragrance</h3>
                 <p>Libre Intense célèbre la liberté d’une femme audacieuse. Une dualité florale brûlante entre la lavande de France et la fleur d'oranger du Maroc.</p>
-                <p><span class="highlight">Pour :</span> Elle<br>
-                <span class="highlight">Elle est :</span> Audacieuse et Royale<br>
-                <span class="highlight">Occasion :</span> Luxe & Soirée<br>
-                <span class="highlight">Famille :</span> FOUGÈRE Florale</p>
+                <p><span class="highlight">Pour :</span> Elle<br><span class="highlight">Elle est :</span> Audacieuse et Royale</p>
                 <h3>Le flacon</h3>
                 <p>Un flacon couture orné du logo Cassandre surdimensionné, incrusté dans le verre.</p>
             </div>
@@ -210,7 +210,7 @@
                 <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Ambre Gris</p>
                 <ul class="note-list">
                     <li>* Notes de tête : Première impression (5-15 min).</li>
-                    <li>* Notes de cœur : Ressortent après 20-60 min.</li>
+                    <li>* Notes de cœur : Ressortent بعد 20-60 min.</li>
                     <li>* Notes de fond : Signature longue durée (jusqu'à 10h+).</li>
                 </ul>
             </div>
@@ -250,7 +250,7 @@
                 <span class="highlight">Famille olfactive :</span> AMBRÉE Ambrée Florale<br>
                 <span class="highlight">La fragrance :</span> Puissante et Provocante</p>
                 <h3>Le flacon</h3>
-                <p>Associant l’esthétique de la haute couture à l’expertise technique, l’emblématique talon aiguille Good Girl est à l’image des femmes puissantes qui inspirent sa silhouette. Découvrez notre collection de parfums à talons hauts.</p>
+                <p>Associant l’esthétique de la haute couture à l’expertise technique, l’emblématique talon aiguille Good Girl est à l’image des femmes puissantes qui inspirent sa silhouette.</p>
             </div>
         </div>
         <div class="row rev">
@@ -264,8 +264,8 @@
                 <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao</p>
                 <ul class="note-list">
                     <li>* Notes de tête : Première impression d’un parfum (5-15 min).</li>
-                    <li>* Notes de cœur : Ressortent après les notes de tête (20-60 min).</li>
-                    <li>* Notes de fond : La senteur qui reste le plus longtemps (jusqu’à 6 heures).</li>
+                    <li>* Notes de cœur : Ressortent بعد 20-60 min.</li>
+                    <li>* Notes de fond : Note qui reste le plus longtemps (jusqu’à 6 heures).</li>
                 </ul>
             </div>
         </div>
