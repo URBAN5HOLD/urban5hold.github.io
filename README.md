@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -27,16 +26,19 @@
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; }
 
-        /* التعديل الجديد: ترتيب الصور والمعلومات */
         .row { display: flex; align-items: center; width: 100%; padding: 40px 8%; gap: 50px; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 50%; }
-        .img-box img { width: 100%; border-radius: 2px; filter: brightness(0.9); }
+        .img-box img { width: 100%; border-radius: 2px; }
         
         .txt-box { width: 50%; color: #fff; text-align: left; }
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; }
-        .txt-box p { font-size: 0.9rem; line-height: 1.8; color: #ccc; font-weight: 300; margin-bottom: 15px; }
+        /* حيدت الخط تحت العنوان */
+        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; border: none !important; }
+        .txt-box p { font-size: 0.85rem; line-height: 1.7; color: #ccc; font-weight: 300; margin-bottom: 12px; }
         .highlight { color: #fff; font-weight: 600; }
+        
+        .note-list { list-style: none; padding: 0; margin-top: 20px; }
+        .note-list li { font-size: 0.75rem; color: #888; margin-bottom: 8px; line-height: 1.4; }
 
         .purchase-area { max-width: 1100px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); width: 90%; background: rgba(255,255,255,0.02); }
         .mini-thumb { width: 90px; height: 90px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); }
@@ -54,15 +56,12 @@
         }
         input::placeholder { color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
         
-        .order-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-family: 'Montserrat'; font-weight: 800; font-size: 1.1rem; cursor: pointer; letter-spacing: 3px; border: none; margin-top: 15px; transition: 0.3s; }
-        .order-btn:hover { background: var(--color); color: #fff; }
-
-        .bottom-notes { width: 84%; margin: 20px auto; color: #555; font-size: 0.75rem; line-height: 1.6; }
+        .order-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-family: 'Montserrat'; font-weight: 800; font-size: 1.1rem; cursor: pointer; letter-spacing: 3px; border: none; margin-top: 15px; }
 
         @media (max-width: 900px) {
-            .row, .row.rev { flex-direction: column; text-align: center; padding: 30px 8%; gap: 30px; }
+            .row, .row.rev { flex-direction: column; text-align: center; padding: 30px 8%; }
             .img-box, .txt-box { width: 100%; }
-            .purchase-area { flex-direction: column-reverse; padding: 20px; }
+            .purchase-area { flex-direction: column-reverse; }
         }
 
         .sauv-t { --color: #4A90E2; }
@@ -87,19 +86,28 @@
             <div class="img-box"><img src="assets/sauvage-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>Sauvage Elixir est un parfum d'une concentration hors du commun, une fragrance où la fraîcheur emblématique de Sauvage s'enivre d'un cœur d'épices.</p>
+                <p>Sauvage Elixir réinterprète la signature iconique de Sauvage avec une concentration inouïe. Une fraîcheur poussée à l'extrême qui se mêle à un cœur d'épices sur mesure.</p>
                 <p><span class="highlight">Pour :</span> Lui<br>
                 <span class="highlight">Il est :</span> Puissant et Noble<br>
-                <span class="highlight">Occasion :</span> Soirées d'Exception</p>
+                <span class="highlight">Occasion :</span> Soirées d'Exception<br>
+                <span class="highlight">Famille :</span> AROMATIQUE Épicée</p>
+                <h3>Le flacon</h3>
+                <p>Le flacon en verre laqué d'un bleu nuit profond est aussi précieux qu'une pièce de joaillerie.</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Notes de Tête :</span> Pamplemousse & Épices<br>
-                <span class="highlight">Notes de Cœur :</span> Lavande de Nyons<br>
-                <span class="highlight">Notes de Fond :</span> Sillage intense, tenue exceptionnelle (12h+).</p>
+                <p><span class="highlight">Ingrédients Principaux :</span> Cannelle, Cardamome, Lavande<br>
+                <span class="highlight">Notes de Tête :</span> Pamplemousse & Épices<br>
+                <span class="highlight">Notes de Cœur :</span> Lavande de Nyons AOP<br>
+                <span class="highlight">Notes de Fond :</span> Bois de Santal & Réglisse</p>
+                <ul class="note-list">
+                    <li>* Notes de tête : Première impression (5-15 min).</li>
+                    <li>* Notes de cœur : Ressortent après 20-60 min.</li>
+                    <li>* Notes de fond : Signature longue durée (jusqu'à 12h+).</li>
+                </ul>
             </div>
         </div>
         <div class="purchase-area">
@@ -130,19 +138,28 @@
             <div class="img-box"><img src="assets/stronger-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>Ce parfum raconte l'histoire d'un amour intense. Une fragrance vibrante et audacieuse, pour un homme qui ne recule devant rien.</p>
+                <p>Cette fragrance raconte l’histoire d’un homme fort, épris d’une passion vibrante. Un parfum boisé et ambré d'une sensualité irrésistible.</p>
                 <p><span class="highlight">Pour :</span> Lui<br>
-                <span class="highlight">Il est :</span> Captivant et Chaleureux<br>
-                <span class="highlight">Occasion :</span> Quotidien & Rendez-vous</p>
+                <span class="highlight">Il est :</span> Captivant et Audacieux<br>
+                <span class="highlight">Occasion :</span> Quotidien & Rendez-vous<br>
+                <span class="highlight">Famille :</span> AMBRÉE Fougère</p>
+                <h3>Le flacon</h3>
+                <p>Un design aux lignes épurées et masculines, surmonté du bouchon iconique enlacé.</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Notes de Tête :</span> Poivre Rose & Genévrier<br>
+                <p><span class="highlight">Ingrédients Principaux :</span> Poivre Rose, Vanille, Ambre<br>
+                <span class="highlight">Notes de Tête :</span> Poivre Rose & Genévrier<br>
                 <span class="highlight">Notes de Cœur :</span> Lavande & Sauge<br>
-                <span class="highlight">Notes de Fond :</span> Sillage sucré et chaud, tenue longue durée (8h+).</p>
+                <span class="highlight">Notes de Fond :</span> Vanille & Châtaigne Sucrée</p>
+                <ul class="note-list">
+                    <li>* Notes de tête : Première impression (5-15 min).</li>
+                    <li>* Notes de cœur : Ressortent après 20-60 min.</li>
+                    <li>* Notes de fond : Signature longue durée (jusqu'à 8h+).</li>
+                </ul>
             </div>
         </div>
         <div class="purchase-area">
@@ -176,16 +193,25 @@
                 <p>Libre Intense célèbre la liberté d’une femme audacieuse. Une dualité florale brûlante entre la lavande de France et la fleur d'oranger du Maroc.</p>
                 <p><span class="highlight">Pour :</span> Elle<br>
                 <span class="highlight">Elle est :</span> Audacieuse et Royale<br>
-                <span class="highlight">Occasion :</span> Luxe & Soirée</p>
+                <span class="highlight">Occasion :</span> Luxe & Soirée<br>
+                <span class="highlight">Famille :</span> FOUGÈRE Florale</p>
+                <h3>Le flacon</h3>
+                <p>Un flacon couture orné du logo Cassandre surdimensionné, incrusté dans le verre.</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Notes de Tête :</span> Mandarine & Bergamote<br>
+                <p><span class="highlight">Ingrédients Principaux :</span> Lavande, Fleur d'Oranger, Vanille<br>
+                <span class="highlight">Notes de Tête :</span> Mandarine & Bergamote<br>
                 <span class="highlight">Notes de Cœur :</span> Lavande & Fleur d'Oranger<br>
-                <span class="highlight">Notes de Fond :</span> Sillage puissant, reste actif jusqu'à 10h.</p>
+                <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Ambre Gris</p>
+                <ul class="note-list">
+                    <li>* Notes de tête : Première impression (5-15 min).</li>
+                    <li>* Notes de cœur : Ressortent بعد 20-60 min.</li>
+                    <li>* Notes de fond : Signature longue durée (jusqu'à 10h+).</li>
+                </ul>
             </div>
         </div>
         <div class="purchase-area">
@@ -216,20 +242,30 @@
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>La douceur و le pouvoir de séduction du jasmin renforcent l’éclat de Good Girl. Le côté mystérieux est révélé grâce au cacao riche.</p>
+                <p>La douceur et le pouvoir de séduction du jasmin renforcent encore l’éclat de Good Girl. Le côté mystérieux de Good Girl est révélé grâce au cacao riche en arômes et à l’enivrante fève tonka, tandis que les notes d’amande et de café déposent une touche finale d’éclat mêlé d’audace.</p>
                 <p><span class="highlight">Pour :</span> Elle<br>
                 <span class="highlight">Elle est :</span> Séductrice et Puissante<br>
-                <span class="highlight">Occasion :</span> Le jour et la nuit</p>
+                <span class="highlight">Occasion :</span> Le jour et la nuit<br>
+                <span class="highlight">Famille olfactive :</span> AMBRÉE Ambrée Florale<br>
+                <span class="highlight">La fragrance :</span> Puissante et Provocante</p>
+                <h3>Le flacon</h3>
+                <p>Associant l’esthétique de la haute couture à l’expertise technique, l’emblématique talon aiguille Good Girl est à l’image des femmes puissantes qui inspirent sa silhouette. Découvrez notre collection de parfums à talons hauts.</p>
             </div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
             <div class="txt-box">
                 <h3>Ingrédients & Notes</h3>
-                <p><span class="highlight">Famille Olfactive :</span> Ambrée Florale<br>
+                <p><span class="highlight">Ingrédients Principaux :</span> Jasmin, Tubéreuse, Fève Tonka<br>
+                <span class="highlight">Famille Olfactive :</span> AMBRÉE Ambrée Florale<br>
                 <span class="highlight">Notes de Tête :</span> Amande<br>
                 <span class="highlight">Notes de Cœur :</span> Jasmin d’Arabie & Tubéreuse<br>
-                <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao (6h+).</p>
+                <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao</p>
+                <ul class="note-list">
+                    <li>* Notes de tête : Première impression d’un parfum, dure entre 5 et 15 minutes.</li>
+                    <li>* Notes de cœur : Commencent à ressortir lorsque les notes de tête s’estompent, dure 20 à 60 minutes environ.</li>
+                    <li>* Notes de fond : La senteur sous-jacente durant le port. Note qui reste le plus longtemps (jusqu’à 6 heures).</li>
+                </ul>
             </div>
         </div>
         <div class="purchase-area">
@@ -249,11 +285,6 @@
         </div>
     </section>
 
-    <div class="bottom-notes">
-        * Note de fond : La senteur qui reste le plus longtemps sur la peau.<br>
-        * Note de tête : Première impression olfactive (5-15 min).
-    </div>
-
     <script>
         function selectSize(element, price, sectionId) {
             const section = document.getElementById(sectionId);
@@ -266,7 +297,7 @@
         let currentIdx = 0;
         document.getElementById('scrollBtn').onclick = () => {
             currentIdx = (currentIdx + 1) % sections.length;
-            document.getElementById(sections[currentIdx]).scrollIntoView();
+            document.getElementById(sections[currentIdx]).scrollIntoView({ behavior: 'smooth' });
         };
 
         window.onscroll = () => {
