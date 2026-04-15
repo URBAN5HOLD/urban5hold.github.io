@@ -115,22 +115,6 @@
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
-        <div class="row">
-            <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>THE LEGENDARY DEPTH</h3>
-                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices. A fragrance that rewrites the rules of masculine intensity.</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/sauvage-detail-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>OFFICIAL COMPOSITION</h3>
-                <p><span class="highlight">Top Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit.</p>
-                <p><span class="highlight">Heart Notes:</span> A customized Lavender Essence AOP from Nyons.</p>
-                <p><span class="highlight">Base Notes:</span> Licorice, Sandalwood, Amber, and Patchouli.</p>
-            </div></div>
-        </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
@@ -142,7 +126,7 @@
                     <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
-            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
+            <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec1', 'SAUVAGE ELIXIR')">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -153,22 +137,6 @@
             <img src="assets/stronger-bottle.png" class="img-bottle">
             <h1 class="brand-logo">STRONGER WITH YOU</h1>
             <div class="perfume-sub">EAU DE PARFUM</div>
-        </div>
-        <div class="row">
-            <div class="img-box"><img src="assets/stronger-detail-left.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>MAGNETIC SENSUALITY</h3>
-                <p>Stronger With You lives in the present, molded by the energy of modernity. Unpredictable, it surprises with its originality.</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/stronger-detail-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>OLFACTORY ARCHITECTURE</h3>
-                <p><span class="highlight">Opening:</span> Cardamom, Pink Pepper, and Violet Leaves.</p>
-                <p><span class="highlight">Heart:</span> Sage and Lavender bring confident elegance.</p>
-                <p><span class="highlight">Base:</span> Smoky Vanilla and Sugar-coated Chestnut accord.</p>
-            </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -181,7 +149,7 @@
                     <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
-            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
+            <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec2', 'STRONGER WITH YOU')">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -192,22 +160,6 @@
             <img src="assets/libre-bottle.png" class="img-bottle">
             <h1 class="brand-logo">LIBRE INTENSE</h1>
             <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
-        </div>
-        <div class="row">
-            <div class="img-box"><img src="assets/libre-detail-left.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>BORN TO BE WILD</h3>
-                <p>The iconic structure of Libre, intensified. A burning floral duality between masculinity and femininity.</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/libre-detail-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>THE RAW ELEMENTS</h3>
-                <p><span class="highlight">Top:</span> French Lavender, Mandarin and Bergamot.</p>
-                <p><span class="highlight">Heart:</span> Moroccan Orange Blossom and Royal Orchid.</p>
-                <p><span class="highlight">Base:</span> Madagascar Vanilla and Tonka Bean.</p>
-            </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -220,7 +172,7 @@
                     <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
-            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
+            <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec3', 'LIBRE INTENSE')">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -231,22 +183,6 @@
             <img src="assets/goodgirl-bottle.png" class="img-bottle">
             <h1 class="brand-logo">GOOD GIRL</h1>
             <div class="perfume-sub">EAU DE PARFUM</div>
-        </div>
-        <div class="row">
-            <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>IT'S SO GOOD TO BE BAD</h3>
-                <p>Inspired by the duality of the modern woman: audacious and sexy, elegant and enigmatic.</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>OLFACTORY NOTES</h3>
-                <p><span class="highlight">Top:</span> Amande (5-15 min).</p>
-                <p><span class="highlight">Heart:</span> Jasmin & Tubéreuse (20-60 min).</p>
-                <p><span class="highlight">Base:</span> Fève Tonka & Cacao (jusqu'à 6h).</p>
-            </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -259,7 +195,7 @@
                     <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
-            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
+            <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec4', 'GOOD GIRL')">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -271,6 +207,52 @@
             section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
         }
 
+        // --- TELEGRAM LOGIC (ALREADY CONFIGURED) ---
+        function sendOrder(sectionId, productName) {
+            const section = document.getElementById(sectionId);
+            const nameInput = section.querySelector('input[name="name"]');
+            const phoneInput = section.querySelector('input[name="phone"]');
+            const cityInput = section.querySelector('input[name="city"]');
+            const activeSizeBox = section.querySelector('.active-size');
+            const orderBtn = section.querySelector('.order-btn');
+
+            const name = nameInput.value;
+            const phone = phoneInput.value;
+            const city = cityInput.value;
+            const size = activeSizeBox.innerText.split('\n')[0];
+            const price = orderBtn.innerText.split('|')[1].trim();
+
+            if(!name || !phone || !city) {
+                alert("عافاك عمر المعلومات كاملة");
+                return;
+            }
+
+            const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
+            const chatId = "7422321456"; 
+            
+            const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
+                            `📦 *المنتوج:* ${productName}\n` +
+                            `📏 *القياس:* ${size}\n` +
+                            `💰 *الثمن:* ${price}\n` +
+                            `--------------------------\n` +
+                            `👤 *الاسم:* ${name}\n` +
+                            `📞 *الهاتف:* ${phone}\n` +
+                            `📍 *المدينة:* ${city}\n\n` +
+                            `✅ يونس، عندك كليان جديد خاصو يتكونفيرما!`;
+
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+            })
+            .then(res => {
+                alert("شكراً! تم إرسال طلبك بنجاح.");
+                section.querySelector('form').reset();
+            })
+            .catch(err => alert("وقع مشكل، حاول مرة أخرى."));
+        }
+
+        // --- SCROLL & NAVIGATION ---
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
         const colors = ['#4A90E2', '#CD7F32', '#D4AF37', '#1a4d99'];
         let currentIdx = 0;
