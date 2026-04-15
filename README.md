@@ -10,15 +10,16 @@
         html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background-color: var(--bg); scroll-snap-type: y mandatory; scroll-behavior: smooth; }
         * { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
 
-        .logo-fixed { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 8px; color: #fff; }
+        /* تعديل الشعار: حيدت أي خط أو خلفية بيضاء تحتو */
+        .logo-fixed { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 8px; color: #fff; border: none !important; background: none !important; }
 
         .scroll-trigger { position: fixed; bottom: 15%; right: 25px; width: 50px; height: 50px; z-index: 2000; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .arrow-icon { width: 20px; height: 20px; border-right: 2.5px solid var(--current-color); border-bottom: 2.5px solid var(--current-color); transform: rotate(45deg); animation: bounce 2s infinite; }
         @keyframes bounce { 0%, 100% { transform: rotate(45deg) translate(0,0); } 50% { transform: rotate(45deg) translate(5px,5px); } }
 
         .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; position: relative; padding-bottom: 60px; }
-        .v-header { width: 100%; line-height: 0; }
         .v-header-sauvage { width: 85%; margin: 0 auto; line-height: 0; }
+        .v-header { width: 100%; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; object-fit: contain; }
 
         .bottle-center { text-align: center; padding: 30px 0; }
@@ -32,13 +33,12 @@
         .img-box img { width: 100%; border-radius: 2px; }
         
         .txt-box { width: 50%; color: #fff; text-align: left; }
-        /* حيدت الخط تحت العنوان */
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; border: none !important; }
+        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 20px; color: var(--color); letter-spacing: 2px; }
         .txt-box p { font-size: 0.85rem; line-height: 1.7; color: #ccc; font-weight: 300; margin-bottom: 12px; }
         .highlight { color: #fff; font-weight: 600; }
         
         .note-list { list-style: none; padding: 0; margin-top: 20px; }
-        .note-list li { font-size: 0.75rem; color: #888; margin-bottom: 8px; line-height: 1.4; }
+        .note-list li { font-size: 0.75rem; color: #888; margin-bottom: 10px; line-height: 1.5; }
 
         .purchase-area { max-width: 1100px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); width: 90%; background: rgba(255,255,255,0.02); }
         .mini-thumb { width: 90px; height: 90px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); }
@@ -59,9 +59,9 @@
         .order-btn { width: 100%; padding: 22px; background: #fff; color: #000; font-family: 'Montserrat'; font-weight: 800; font-size: 1.1rem; cursor: pointer; letter-spacing: 3px; border: none; margin-top: 15px; }
 
         @media (max-width: 900px) {
-            .row, .row.rev { flex-direction: column; text-align: center; padding: 30px 8%; }
+            .row, .row.rev { flex-direction: column; text-align: center; padding: 30px 8%; gap: 30px; }
             .img-box, .txt-box { width: 100%; }
-            .purchase-area { flex-direction: column-reverse; }
+            .purchase-area { flex-direction: column-reverse; padding: 20px; }
         }
 
         .sauv-t { --color: #4A90E2; }
@@ -144,7 +144,7 @@
                 <span class="highlight">Occasion :</span> Quotidien & Rendez-vous<br>
                 <span class="highlight">Famille :</span> AMBRÉE Fougère</p>
                 <h3>Le flacon</h3>
-                <p>Un design aux lignes épurées et masculines, surmonté du bouchon iconique enlacé.</p>
+                <p>Un design aux lignes épurées et masculines, surmonté du bouchون iconique enlacé.</p>
             </div>
         </div>
         <div class="row rev">
@@ -209,7 +209,7 @@
                 <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Ambre Gris</p>
                 <ul class="note-list">
                     <li>* Notes de tête : Première impression (5-15 min).</li>
-                    <li>* Notes de cœur : Ressortent بعد 20-60 min.</li>
+                    <li>* Notes de cœur : Ressortent après 20-60 min.</li>
                     <li>* Notes de fond : Signature longue durée (jusqu'à 10h+).</li>
                 </ul>
             </div>
@@ -262,9 +262,9 @@
                 <span class="highlight">Notes de Cœur :</span> Jasmin d’Arabie & Tubéreuse<br>
                 <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao</p>
                 <ul class="note-list">
-                    <li>* Notes de tête : Première impression d’un parfum, dure entre 5 et 15 minutes.</li>
-                    <li>* Notes de cœur : Commencent à ressortir lorsque les notes de tête s’estompent, dure 20 à 60 minutes environ.</li>
-                    <li>* Notes de fond : La senteur sous-jacente durant le port. Note qui reste le plus longtemps (jusqu’à 6 heures).</li>
+                    <li>* Notes de tête : Première impression d’un parfum (5-15 min).</li>
+                    <li>* Notes de cœur : Ressortent après les notes de tête (20-60 min).</li>
+                    <li>* Notes de fond : La senteur qui reste le plus longtemps (jusqu’à 6 heures).</li>
                 </ul>
             </div>
         </div>
