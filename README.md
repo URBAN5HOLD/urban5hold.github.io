@@ -119,7 +119,7 @@
             <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE LEGENDARY DEPTH</h3>
-                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices.</p>
+                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a heart of spices.</p>
             </div></div>
         </div>
         <div class="row rev">
@@ -263,6 +263,7 @@
             section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
         }
 
+        // --- TELEGRAM LOGIC WITH YOUR NEW ID ---
         function sendOrder(sectionId, productName) {
             const section = document.getElementById(sectionId);
             const name = section.querySelector('input[name="name"]').value;
@@ -277,7 +278,7 @@
             }
 
             const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
-            const chatId = "7635707772"; 
+            const chatId = "7635707772"; // ID ديالك الجديد
             
             const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
                             `📦 *المنتوج:* ${productName}\n` +
@@ -298,7 +299,7 @@
                 alert("شكراً! تم إرسال طلبك بنجاح.");
                 section.querySelector('form').reset();
             })
-            .catch(err => alert("وقع مشكل، حاول مرة أخرى."));
+            .catch(err => alert("وقع مشكل فالاتصال، حاول مرة أخرى."));
         }
 
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
