@@ -1,8 +1,8 @@
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Velooria Beauty | Collection Officielle</title>
+    <title>Velooria Beauty | Official Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -25,7 +25,7 @@
             letter-spacing: 10px; color: #fff !important; pointer-events: none;
         }
 
-        /* السهم: هابط بـ 75% ومن غير دوارة */
+        /* Smart Arrow: 75% down, no circle */
         .scroll-trigger { 
             position: fixed; top: 75%; right: 25px; 
             transform: translateY(-50%);
@@ -50,7 +50,6 @@
             opacity: 0.3; z-index: 0; pointer-events: none;
         }
 
-        .v-header-sauvage { width: 85%; margin: 0 auto; position: relative; z-index: 1; line-height: 0; }
         .v-header { width: 100%; position: relative; z-index: 1; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; }
 
@@ -59,7 +58,7 @@
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
 
-        /* تأثير الضبابة الحر */
+        /* Free Glow Effect */
         .text-glow-free {
             position: relative; z-index: 2; padding: 25px;
             background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important;
@@ -87,7 +86,7 @@
         .size-box span { display: block; font-size: 9px; color: #888; }
         .active-size { border-color: var(--color) !important; background: rgba(255,255,255,0.05) !important; }
 
-        input { width: 100%; padding: 18px 0; margin-bottom: 15px; color: #fff !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; }
+        input { width: 100%; padding: 18px 0; margin-bottom: 15px; color: #fff !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; font-family: 'Montserrat'; }
         .order-btn { width: 100%; padding: 22px; background-color: #fff !important; color: #000 !important; font-weight: 800; cursor: pointer; letter-spacing: 4px; }
 
         @media (max-width: 900px) {
@@ -109,29 +108,18 @@
 
     <section class="product-section sauv-t" id="sec1">
         <div class="glow-center"></div>
-        <div class="v-header-sauvage"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
+        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
             <img src="assets/sauvage-bottle.png" class="img-bottle">
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/sauvage-left.jpg"></div>
+            <div class="img-box"><img src="assets/image_25f332.png"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>LA FRAGRANCE</h3>
-                <p>Une concentration inouïe. Une fraîcheur poussée à l'extrême qui se mêle à un cœur d'épices sur mesure.</p>
-                <p><span class="highlight">Pour :</span> Lui<br>
-                   <span class="highlight">Il est :</span> Puissant et Noble<br>
-                   <span class="highlight">Occasion :</span> Soirées d'Exception</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/sauvage-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>NOTES OFFICIELLES</h3>
-                <p><span class="highlight">Famille :</span> AROMATIQUE Épicée<br>
-                   <span class="highlight">Notes :</span> Lavande AOP, Pamplemousse, Bois liquoreux<br>
-                   <span class="highlight">Performance :</span> Sillage extrême, tenue de plus de 12 heures.</p>
+                <h3>THE FRAGRANCE</h3>
+                <p>An extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices.</p>
+                <p><span class="highlight">Gender:</span> Men<br><span class="highlight">Vibe:</span> Powerful and Noble</p>
             </div></div>
         </div>
     </section>
@@ -145,21 +133,11 @@
             <div class="perfume-sub">EAU DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/stronger-left.jpg"></div>
+            <div class="img-box"><img src="assets/stronger-left.png"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>LA FRAGRANCE</h3>
-                <p>Un parfum boisé et ambré d'une sensualité magnétique. Captivant et audacieux.</p>
-                <p><span class="highlight">Caractère :</span> Moderne et Chaleureux<br>
-                   <span class="highlight">Sillage :</span> Intense et enveloppant</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/stronger-right.jpg"></div>
-            <div class="txt-box"><div class="text-glow-free">
-                <h3>DÉTAILS OFFICIELS</h3>
-                <p><span class="highlight">Tête :</span> Poivre Rose<br>
-                   <span class="highlight">Cœur :</span> Sauge & Lavande<br>
-                   <span class="highlight">Fond :</span> Vanille fumée & Châtaigne</p>
+                <h3>THE FRAGRANCE</h3>
+                <p>A woody and amber fragrance with magnetic sensuality. Captivating and bold.</p>
+                <p><span class="highlight">Top:</span> Pink Pepper<br><span class="highlight">Base:</span> Smoky Vanilla</p>
             </div></div>
         </div>
     </section>
@@ -173,19 +151,11 @@
             <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/libre-left.jpg"></div> <div class="txt-box"><div class="text-glow-free">
-                <h3>LA FRAGRANCE</h3>
-                <p>Libre Intense célèbre la liberté d'une femme audacieuse. Une dualité florale brûlante.</p>
-                <p><span class="highlight">Tempérament :</span> Royale et Audacieuse<br>
-                   <span class="highlight">Occasion :</span> Luxe & Soirée</p>
-            </div></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/libre-right.jpg"></div> <div class="txt-box"><div class="text-glow-free">
-                <h3>NOTES OFFICIELLES</h3>
-                <p><span class="highlight">Tête :</span> Mandarine & Bergamote<br>
-                   <span class="highlight">Cœur :</span> Lavande & Orchidée Royale<br>
-                   <span class="highlight">Fond :</span> Sillage puissant, reste actif jusqu'à 10h.</p>
+            <div class="img-box"><img src="assets/image_26d833.png"></div>
+            <div class="txt-box"><div class="text-glow-free">
+                <h3>THE FRAGRANCE</h3>
+                <p>A burning floral duality. Freedom pushed to its extreme.</p>
+                <p><span class="highlight">Notes:</span> French Lavender & Moroccan Orange Blossom</p>
             </div></div>
         </div>
     </section>
@@ -199,34 +169,30 @@
             <div class="perfume-sub">EAU DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/gg-left.jpg"></div> <div class="txt-box"><div class="text-glow-free">
-                <h3>LA FRAGRANCE</h3>
-                <p>La douceur du jasmin et l'énivrante fève tonka révèlent le côté mystérieux.</p>
-                <p><span class="highlight">Elle est :</span> Séductrice et Puissante<br>
-                   <span class="highlight">Occasion :</span> Le jour et la nuit<br>
-                   <span class="highlight">Famille :</span> AMBRÉE Florale</p>
+            <div class="img-box"><img src="assets/image_2651c6.png"></div> <div class="txt-box"><div class="text-glow-free">
+                <h3>THE FRAGRANCE</h3>
+                <p>The sweetness of jasmine and the intoxicating tonka bean reveal the mysterious side of Good Girl.</p>
+                <p><span class="highlight">Family:</span> Amber Floral<br><span class="highlight">Vibe:</span> Seductive & Powerful</p>
             </div></div>
         </div>
         <div class="row rev">
-            <div class="img-box"><img src="assets/gg-right.jpg"></div> <div class="txt-box"><div class="text-glow-free">
-                <h3>NOTES OLFACTIVES</h3>
-                <p><span class="highlight">Tête :</span> Amande (5-15 min)<br>
-                   <span class="highlight">Cœur :</span> Jasmin d'Arabie & Tubéreuse (20-60 min)<br>
-                   <span class="highlight">Fond :</span> Fève Tonka & Cacao (jusqu'à 6 heures)</p>
+            <div class="img-box"><img src="assets/image_26688e.png"></div> <div class="txt-box"><div class="text-glow-free">
+                <h3>OLFACTORY NOTES</h3>
+                <p><span class="highlight">Top:</span> Almond<br><span class="highlight">Heart:</span> Tuberose & Jasmine<br><span class="highlight">Base:</span> Tonka Bean & Cocoa</p>
             </div></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
                     <div><h4 style="font-family:'Cinzel'">GOOD GIRL</h4><p style="color:#666; font-size:10px">10ML / 319 DH</p></div>
-                    <img src="assets/gg-thumb.jpg" class="mini-thumb">
+                    <img src="assets/gg-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>± 80 RASHAT</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>± 160 RASHAT</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>± 80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>± 160 SPRAYS</span></div>
                 </div>
             </div>
-            <div style="flex:1.2"><form><input placeholder="NOM COMPLET"><input placeholder="TÉLÉPHONE"><input placeholder="VILLE"><button type="button" class="order-btn">COMMANDER | 319 DH</button></form></div>
+            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -235,7 +201,7 @@
             const section = document.getElementById(sectionId);
             section.querySelectorAll('.size-box').forEach(box => box.classList.remove('active-size'));
             element.classList.add('active-size');
-            section.querySelector('.order-btn').innerText = `COMMANDER | ${price} DH`;
+            section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
         }
 
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
