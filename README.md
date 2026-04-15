@@ -6,96 +6,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
-        * { 
-            margin: 0; padding: 0; box-sizing: border-box; 
-            outline: none !important; border: none !important; 
-            text-decoration: none !important; background: none !important;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html, body { 
-            width: 100%; background-color: #000 !important; 
-            scroll-snap-type: y mandatory; scroll-behavior: smooth; 
-            font-family: 'Montserrat', sans-serif; color: #fff; overflow-x: hidden;
-        }
-
-        .logo-fixed { 
-            position: fixed; top: 25px; left: 50%; transform: translateX(-50%); 
-            z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.2rem; 
-            letter-spacing: 10px; color: #fff !important; pointer-events: none;
-        }
-
-        .scroll-trigger { 
-            position: fixed; top: 75%; right: 25px; 
-            transform: translateY(-50%);
-            width: 40px; height: 40px; z-index: 2000; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .arrow-icon { 
-            width: 20px; height: 20px; 
-            border-right: 3px solid var(--current-arrow-color, #fff) !important; 
-            border-bottom: 3px solid var(--current-arrow-color, #fff) !important; 
-            transform: rotate(45deg); animation: bounce 2s infinite;
-            transition: 0.5s ease;
-        }
+        /* [نفس الـ CSS السابق بدون أي تغيير] */
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none !important; border: none !important; text-decoration: none !important; background: none !important; -webkit-tap-highlight-color: transparent; }
+        html, body { width: 100%; background-color: #000 !important; scroll-snap-type: y mandatory; scroll-behavior: smooth; font-family: 'Montserrat', sans-serif; color: #fff; overflow-x: hidden; }
+        .logo-fixed { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 10px; color: #fff !important; pointer-events: none; }
+        .scroll-trigger { position: fixed; top: 75%; right: 25px; transform: translateY(-50%); width: 40px; height: 40px; z-index: 2000; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .arrow-icon { width: 20px; height: 20px; border-right: 3px solid var(--current-arrow-color, #fff) !important; border-bottom: 3px solid var(--current-arrow-color, #fff) !important; transform: rotate(45deg); animation: bounce 2s infinite; transition: 0.5s ease; }
         .arrow-up { transform: rotate(-135deg) !important; }
-
         @keyframes bounce { 0%, 100% { transform: translateY(-5px) rotate(45deg); } 50% { transform: translateY(5px) rotate(45deg); } }
         @keyframes bounce-up { 0%, 100% { transform: translateY(5px) rotate(-135deg); } 50% { transform: translateY(-5px) rotate(-135deg); } }
-
         .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; position: relative; padding-bottom: 80px; background-color: #000 !important; }
-        
-        .glow-center { 
-            position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); 
-            width: 600px; height: 600px; 
-            background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 75%) !important; 
-            opacity: 0.3; z-index: 0; pointer-events: none;
-        }
-
+        .glow-center { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 75%) !important; opacity: 0.3; z-index: 0; pointer-events: none; }
         .v-header { width: 100%; position: relative; z-index: 1; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; }
-
         .bottle-center { text-align: center; padding: 40px 0; position: relative; z-index: 2; }
         .img-bottle { width: 32%; max-width: 130px; margin: 0 auto; display: block; filter: drop-shadow(0 0 30px rgba(0,0,0,0.8)); }
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
-
-        .text-glow-free {
-            position: relative; z-index: 2; padding: 25px;
-            background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important;
-        }
-
+        .text-glow-free { position: relative; z-index: 2; padding: 25px; background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important; }
         .row { display: flex; align-items: center; width: 100%; padding: 50px 10%; gap: 60px; position: relative; z-index: 2; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 45%; }
         .img-box img { width: 100%; border-radius: 4px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
         .txt-box { width: 55%; text-align: left; }
         .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 20px; color: var(--color) !important; letter-spacing: 2px; }
         .txt-box p { font-size: 0.95rem; line-height: 1.9; color: #f0f0f0 !important; font-weight: 300; margin-bottom: 12px; }
         .highlight { color: var(--color) !important; font-weight: 600; font-size: 0.85rem; margin-right: 5px; }
-        
-        .purchase-area { 
-            max-width: 1000px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; 
-            border-top: 1px solid rgba(255,255,255,0.1) !important; 
-            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-            width: 90%; position: relative; z-index: 2;
-        }
+        .purchase-area { max-width: 1000px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1) !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; width: 90%; position: relative; z-index: 2; }
         .mini-thumb { width: 100px; height: 100px; object-fit: cover; }
         .size-container { display: flex; gap: 15px; margin-top: 15px; }
         .size-box { flex: 1; padding: 15px; border: 1px solid rgba(255,255,255,0.2) !important; text-align: center; cursor: pointer; color: #fff; }
         .size-box span { display: block; font-size: 9px; color: #888; }
         .active-size { border-color: var(--color) !important; background: rgba(255,255,255,0.05) !important; }
-
         input { width: 100%; padding: 18px 0; margin-bottom: 15px; color: #fff !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; font-family: 'Montserrat'; }
         .order-btn { width: 100%; padding: 22px; background-color: #fff !important; color: #000 !important; font-weight: 800; cursor: pointer; letter-spacing: 4px; }
-
-        @media (max-width: 900px) {
-            .row, .row.rev { flex-direction: column; text-align: center; padding: 40px 5%; }
-            .img-box, .txt-box { width: 100%; }
-            .purchase-area { flex-direction: column-reverse; padding: 25px; }
-        }
-
+        @media (max-width: 900px) { .row, .row.rev { flex-direction: column; text-align: center; padding: 40px 5%; } .img-box, .txt-box { width: 100%; } .purchase-area { flex-direction: column-reverse; padding: 25px; } }
         .sauv-t { --color: #4A90E2; --glow-color: rgba(74, 144, 226, 0.35); }
         .stron-t { --color: #CD7F32; --glow-color: rgba(205, 127, 50, 0.35); }
         .libre-t { --color: #D4AF37; --glow-color: rgba(212, 175, 55, 0.35); }
@@ -119,14 +64,14 @@
             <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE LEGENDARY DEPTH</h3>
-                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a heart of spices.</p>
+                <p>Sauvage Elixir is an extraordinary concentration, a masterpiece of wild freshness. It intoxicates the senses with a custom-made heart of spices and a rich, woody trail that lingers long after you leave the room.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OFFICIAL COMPOSITION</h3>
-                <p><span class="highlight">Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit.</p>
+                <p><span class="highlight">Notes:</span> A powerful blend of Nutmeg, Cinnamon, and Cardamom, balanced perfectly by the freshness of Grapefruit and the warmth of Licorice.</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -136,8 +81,8 @@
                     <img src="assets/sauvage-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML<span>80 SPRAYS</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>160 SPRAYS</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML<span>± 80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>± 160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec1', 'SAUVAGE ELIXIR')">ORDER NOW | 319 DH</button></form></div>
@@ -156,14 +101,14 @@
             <div class="img-box"><img src="assets/stronger-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>MAGNETIC SENSUALITY</h3>
-                <p>Stronger With You lives in the present, molded by the energy of modernity.</p>
+                <p>Stronger With You lives in the present, molded by the energy of modernity. Unpredictable, it surprises with its originality, like the spicy accord in the top notes—a mix of cardamom, pink peppercorn, and violet leaves.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OLFACTORY ARCHITECTURE</h3>
-                <p><span class="highlight">Heart:</span> Sage and Lavender bring confident elegance.</p>
+                <p><span class="highlight">Heart:</span> The aromatic heart consists of Sage and Lavender, bringing a confident elegance with the easy insouciance of youth, followed by a base of smoky Vanilla Jungle Essence.</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -173,8 +118,8 @@
                     <img src="assets/stronger-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec2')">5ML<span>80 SPRAYS</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>160 SPRAYS</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec2')">5ML<span>± 80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>± 160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec2', 'STRONGER WITH YOU')">ORDER NOW | 319 DH</button></form></div>
@@ -193,14 +138,14 @@
             <div class="img-box"><img src="assets/libre-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>BORN TO BE WILD</h3>
-                <p>The iconic structure of Libre, intensified. A burning floral duality.</p>
+                <p>The iconic structure of Libre, intensified. A burning floral duality, where the tension between French lavender and Moroccan orange blossom becomes even more excessive, enveloped in a creamy orchid accord.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE RAW ELEMENTS</h3>
-                <p><span class="highlight">Base:</span> Madagascar Vanilla and Tonka Bean.</p>
+                <p><span class="highlight">Base:</span> Madagascar Vanilla and Tonka Bean provide a dark, smoky depth that contrasts beautifully with the bright citrus top notes, creating a trail that is both fierce and feminine.</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -210,8 +155,8 @@
                     <img src="assets/libre-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec3')">5ML<span>80 SPRAYS</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>160 SPRAYS</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec3')">5ML<span>± 80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>± 160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec3', 'LIBRE INTENSE')">ORDER NOW | 319 DH</button></form></div>
@@ -230,14 +175,14 @@
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>IT'S SO GOOD TO BE BAD</h3>
-                <p>Inspired by the duality of the modern woman: audacious and sexy.</p>
+                <p>Inspired by the duality of the modern woman: audacious and sexy, elegant and enigmatic. Good Girl represents the complex vibrant world of femininity through a bold mix of dark and light elements.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OLFACTORY NOTES</h3>
-                <p><span class="highlight">Heart:</span> Jasmin & Tubéreuse.</p>
+                <p><span class="highlight">Heart:</span> The sweet qualities of Jasmine and Tuberose give the fragrance its brightness, while Roasted Tonka Bean and Cocoa provide the mysterious dark side that lasts all night.</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -247,8 +192,8 @@
                     <img src="assets/gg-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>80 SPRAYS</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>160 SPRAYS</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>± 80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>± 160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2"><form><input name="name" placeholder="FULL NAME"><input name="phone" placeholder="PHONE NUMBER"><input name="city" placeholder="CITY"><button type="button" class="order-btn" onclick="sendOrder('sec4', 'GOOD GIRL')">ORDER NOW | 319 DH</button></form></div>
@@ -263,7 +208,6 @@
             section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
         }
 
-        // --- TELEGRAM LOGIC WITH YOUR NEW ID ---
         function sendOrder(sectionId, productName) {
             const section = document.getElementById(sectionId);
             const name = section.querySelector('input[name="name"]').value;
@@ -278,7 +222,7 @@
             }
 
             const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
-            const chatId = "7635707772"; // ID ديالك الجديد
+            const chatId = "7635707772"; 
             
             const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
                             `📦 *المنتوج:* ${productName}\n` +
