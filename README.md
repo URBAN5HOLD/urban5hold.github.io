@@ -343,16 +343,5 @@
             }
         };
     </script>
-    <script>
-  // هاد الكود كيمسح أي عنصر فيه اللينك من الشاشة
-  document.addEventListener("DOMContentLoaded", function() {
-    var allElements = document.querySelectorAll('*');
-    for (var i = 0; i < allElements.length; i++) {
-      if (allElements[i].innerText && allElements[i].innerText.includes('github.io')) {
-        allElements[i].style.display = 'none';
-      }
-    }
-  });
-</script>
 </body>
 </html>
