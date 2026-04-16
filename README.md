@@ -780,177 +780,161 @@
 
 
 
-<div id="chat-icon" style="position: fixed; bottom: 20px; left: 20px; width: 60px; height: 60px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10002; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+<script>
 
-        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" width="30" style="filter: invert(1);">
+    // الإعدادات الخاصة بك
 
-    </div>
+    const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awI";
 
+    const TELEGRAM_BOT_TOKEN = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
 
+    const TELEGRAM_CHAT_ID = "7635707772";
 
-    <div id="chat-window" style="display: none; position: fixed; bottom: 90px; left: 20px; width: 320px; height: 450px; background: #000; border: 1px solid #333; border-radius: 15px; flex-direction: column; z-index: 10002; font-family: 'Montserrat', sans-serif; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
 
-        <div style="background: #fff; color: #000; padding: 15px; font-weight: bold; display: flex; justify-content: space-between;">
 
-            <span>VELOORIA ASSISTANT</span>
+    const chatIcon = document.getElementById('chat-icon');
 
-            <span id="close-chat" style="cursor: pointer;">✕</span>
+    const chatWindow = document.getElementById('chat-window');
 
-        </div>
+    const closeChat = document.getElementById('close-chat');
 
-        <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; color: #eee; font-size: 0.85rem; line-height: 1.4; display: flex; flex-direction: column;">
+    const sendBtn = document.getElementById('send-btn');
 
-            <div style="margin-bottom: 10px; background: #222; padding: 8px; border-radius: 8px; align-self: flex-start;">أهلاً بك فـ Velooria! ✨ واش كتقلب على شي ريحة خاصة؟</div>
+    const chatInput = document.getElementById('chat-input');
 
-        </div>
+    const chatMessages = document.getElementById('chat-messages');
 
-        <div style="padding: 10px; border-top: 1px solid #333; display: flex; background: #111;">
 
-            <input id="chat-input" type="text" placeholder="كتب سؤالك هنا..." style="flex: 1; background: transparent; border: none !important; color: #fff; padding: 5px; outline: none !important;">
 
-            <button id="send-btn" style="background: #fff; color: #000; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-weight: bold;">صيفط</button>
+    // إظهار وإخفاء النافذة
 
-        </div>
+    chatIcon.onclick = () => chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
 
-    </div>
+    closeChat.onclick = () => chatWindow.style.display = 'none';
 
 
 
-    <script>
+    async function askGemini(message) {
 
-        const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awl";
+        // تحديد المنتج الحالي (يفترض وجود متغير currentIdx في الكود الأصلي ديالك)
 
-        const TELEGRAM_BOT_TOKEN = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
+        const products = ["Sauvage Elixir", "Stronger With You Intensely", "Libre Intense", "Good Girl (Blue Shoe)"];
 
-        const TELEGRAM_CHAT_ID = "7635707772";
+        const currentProduct = (typeof currentIdx !== 'undefined') ? products[currentIdx] : "العطور الأصلية";
 
+        
 
+        const systemPrompt = `أنت بياع محترف فـ متجر Velooria للعطور الأصلية (5ml/10ml).
 
-        const chatIcon = document.getElementById('chat-icon');
+        - أسلوبك: دارجة مغربية قحة، بياع حريف، وكتفهم واش كتهضر مع راجل أو مرا.
 
-        const chatWindow = document.getElementById('chat-window');
+        - العطور: Sauvage Elixir، Stronger With You Intensely، Libre Intense، و Good Girl (الصباط الزرق).
 
-        const closeChat = document.getElementById('close-chat');
+        - الإقناع: حنا كنقسمو القراعي الكبار للأصلي باش نوصلو الجودة للناس بثمن معقول. قول ديما 'حنا كنهابو نتقولبو داكشي علاش مابغيناش نـقلبو الناس'.
 
-        const sendBtn = document.getElementById('send-btn');
+        - المهمة: غير يقتنع الكليان، خوذ منو (الاسم، المدينة، الهاتف) باش تسجل الطلب.
 
-        const chatInput = document.getElementById('chat-input');
+        - السياق: الكليان كيشوف دابا ${currentProduct}.`;
 
-        const chatMessages = document.getElementById('chat-messages');
 
 
+        try {
 
-        // تفتيح وسدان الشات
-
-        chatIcon.onclick = () => chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
-
-        closeChat.onclick = () => chatWindow.style.display = 'none';
-
-
-
-        async function askGemini(message) {
-
-            const products = ["Sauvage Elixir", "Stronger With You", "Libre Intense", "Good Girl"];
-
-            const currentProduct = (typeof currentIdx !== 'undefined') ? products[currentIdx] : "العطور الأصلية";
-
-            
-
-            const systemPrompt = `أنت بياع محترف فـ متجر Velooria. أسلوبك: دارجة مغربية قحة. الهدف: تقنع الكليان بلي الجودة أصلية وتاخد منو (الاسم، المدينة، الهاتف). السياق الحالي: الكليان كيشوف ${currentProduct}.`;
-
-
-
-            try {
-
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
-
-                    method: 'POST',
-
-                    headers: { 'Content-Type': 'application/json' },
-
-                    body: JSON.stringify({
-
-                        contents: [{ parts: [{ text: systemPrompt + "\nUser: " + message }] }]
-
-                    })
-
-                });
-
-                const data = await response.json();
-
-                return data.candidates[0].content.parts[0].text;
-
-            } catch (e) { 
-
-                return "سمح ليا، كاين مشكل فالاتصال. جرب مرة أخرى!"; 
-
-            }
-
-        }
-
-
-
-        sendBtn.onclick = async () => {
-
-            const msg = chatInput.value.trim();
-
-            if(!msg) return;
-
-
-
-            chatMessages.innerHTML += `<div style="margin-bottom: 10px; background: #333; padding: 10px; border-radius: 10px; align-self: flex-end; color: #fff; max-width: 80%;">${msg}</div>`;
-
-            chatInput.value = "";
-
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-
-
-            const loadingId = Date.now();
-
-            chatMessages.innerHTML += `<div id="${loadingId}" style="margin-bottom: 10px; color: #888; align-self: flex-start;">جاري التفكير...</div>`;
-
-            
-
-            const aiRes = await askGemini(msg);
-
-            document.getElementById(loadingId).remove();
-
-
-
-            chatMessages.innerHTML += `<div style="margin-bottom: 10px; background: #222; padding: 10px; border-radius: 10px; align-self: flex-start; max-width: 80%;"><b>Velooria AI:</b><br>${aiRes}</div>`;
-
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-
-
-            // صيفط لتيليغرام إذا كاين رقم هاتف
-
-            if (/(06|07|05)\d{8}/.test(msg)) {
-
-                sendToTelegram(`🚀 *طلب جديد من الشات:*\n💬 الميساج: ${msg}`);
-
-            }
-
-        };
-
-
-
-        function sendToTelegram(text) {
-
-            fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
 
                 method: 'POST',
 
                 headers: { 'Content-Type': 'application/json' },
 
-                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'Markdown' })
+                body: JSON.stringify({
+
+                    contents: [{ role: "user", parts: [{ text: `System: ${systemPrompt}\nUser: ${message}` }] }]
+
+                })
 
             });
 
+            const data = await response.json();
+
+            const aiResponse = data.candidates[0].content.parts[0].text;
+
+
+
+            // إذا كاين رقم هاتف، صيفط لتيليغرام
+
+            if (/(06|07|05)\d{8}/.test(message)) {
+
+                sendToTelegram(`🚀 *طلب جديد من الشات:*\n💬 الميساج: ${message}\n📍 المنتج: ${currentProduct}`);
+
+            }
+
+
+
+            return aiResponse;
+
+        } catch (e) { 
+
+            console.error(e);
+
+            return "سمح ليا، كاين مشكل فالاتصال. جرب مرة أخرى!"; 
+
         }
 
-    </script>
+    }
+
+
+
+    sendBtn.onclick = async () => {
+
+        const msg = chatInput.value.trim();
+
+        if(!msg) return;
+
+        
+
+        chatMessages.innerHTML += `<div style="margin-bottom: 10px; background: #333; padding: 10px; border-radius: 10px; align-self: flex-end; color: #fff; max-width: 80%;"> ${msg} </div>`;
+
+        chatInput.value = "";
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+
+
+        const loadingId = Date.now();
+
+        chatMessages.innerHTML += `<div id="${loadingId}" style="margin-bottom: 10px; color: #888; align-self: flex-start;">جاري التفكير...</div>`;
+
+        
+
+        const aiRes = await askGemini(msg);
+
+        document.getElementById(loadingId).remove();
+
+        
+
+        chatMessages.innerHTML += `<div style="margin-bottom: 10px; background: #222; padding: 10px; border-radius: 10px; align-self: flex-start; max-width: 80%;"><b>Velooria AI:</b><br>${aiRes}</div>`;
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    };
+
+
+
+    function sendToTelegram(text) {
+
+        fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+
+            method: 'POST',
+
+            headers: { 'Content-Type': 'application/json' },
+
+            body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'Markdown' })
+
+        });
+
+    }
+
+</script>
 
 </body>
 
