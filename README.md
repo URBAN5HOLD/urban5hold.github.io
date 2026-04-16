@@ -391,7 +391,7 @@
 
 <script>
     // الإعدادات الخاصة بك
-   const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awl";
+   const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awI";
     const TELEGRAM_BOT_TOKEN = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
     const TELEGRAM_CHAT_ID = "7635707772";
 
