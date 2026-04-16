@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +18,6 @@
             font-family: 'Montserrat', sans-serif; color: #fff; overflow-x: hidden;
         }
 
-        /* Fixed Logo */
         .logo-fixed { 
             position: fixed; top: 0; left: 0; width: 100%; 
             background-color: #000 !important; padding: 25px 0; 
@@ -28,9 +26,8 @@
             text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        /* Scroll Trigger */
         .scroll-trigger { 
-            position: fixed; bottom: 40%; right: 15px; 
+            position: fixed; bottom: 45%; right: 15px; 
             width: 50px; height: 50px; z-index: 10001; 
             cursor: pointer; display: flex; align-items: center; justify-content: center;
             background: rgba(255,255,255,0.1); border-radius: 50%;
@@ -48,9 +45,7 @@
         @keyframes bounce { 0%, 100% { transform: translateY(-5px) rotate(45deg); } 50% { transform: translateY(5px) rotate(45deg); } }
         @keyframes bounce-up { 0%, 100% { transform: translateY(5px) rotate(-135deg); } 50% { transform: translateY(-5px) rotate(-135deg); } }
 
-        /* Sections */
         .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; position: relative; padding-bottom: 80px; background-color: #000 !important; }
-        .glow-center { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 75%) !important; opacity: 0.3; z-index: 0; pointer-events: none; }
         .v-header { width: 100%; position: relative; z-index: 1; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; }
 
@@ -60,35 +55,33 @@
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
 
-        .row { display: flex; align-items: center; width: 100%; padding: 50px 10%; gap: 60px; position: relative; z-index: 2; }
-        .row.rev { flex-direction: row-reverse; }
-        .img-box { width: 45%; }
-        .img-box img { width: 100%; border-radius: 4px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .txt-box { width: 55%; text-align: left; }
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 20px; color: var(--color) !important; letter-spacing: 2px; }
-        .txt-box p { font-size: 0.95rem; line-height: 1.9; color: #f0f0f0 !important; font-weight: 300; }
-        .highlight { color: var(--color) !important; font-weight: 600; }
-        
         .purchase-area { max-width: 1000px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); width: 90%; position: relative; z-index: 2; }
-        .size-box { flex: 1; padding: 15px; border: 1px solid rgba(255,255,255,0.2); text-align: center; cursor: pointer; }
-        .active-size { border-color: var(--color); background: rgba(255,255,255,0.05); }
+        .size-box { flex: 1; padding: 15px; border: 1px solid rgba(255,255,255,0.2); text-align: center; cursor: pointer; color: #fff; }
+        .active-size { border-color: var(--color) !important; background: rgba(255,255,255,0.05) !important; }
 
-        /* Form Inputs Fix */
         .purchase-area input { 
             width: 100%; padding: 15px; margin-bottom: 10px; 
             background: rgba(255,255,255,0.05) !important; 
             border: 1px solid rgba(255,255,255,0.1) !important; 
             color: #fff !important; font-family: 'Montserrat';
         }
-        .order-btn { width: 100%; padding: 20px; background: #fff !important; color: #000 !important; font-weight: 800; cursor: pointer; letter-spacing: 2px; border: none; }
-
-        @media (max-width: 900px) { .row, .row.rev { flex-direction: column; text-align: center; padding: 40px 5%; } .img-box, .txt-box { width: 100%; } .purchase-area { flex-direction: column-reverse; } }
+        .order-btn { width: 100%; padding: 20px; background: #fff !important; color: #000 !important; font-weight: 800; cursor: pointer; border: none; }
 
         /* Themes */
-        .sauv-t { --color: #4A90E2; --glow-color: rgba(74, 144, 226, 0.35); }
-        .stron-t { --color: #CD7F32; --glow-color: rgba(205, 127, 50, 0.35); }
-        .libre-t { --color: #D4AF37; --glow-color: rgba(212, 175, 55, 0.35); }
-        .gg-t { --color: #1a4d99; --glow-color: rgba(26, 77, 153, 0.35); }
+        .sauv-t { --color: #4A90E2; }
+        .stron-t { --color: #CD7F32; }
+        .libre-t { --color: #D4AF37; }
+        .gg-t { --color: #1a4d99; }
+
+        /* Chatbot Style */
+        #chat-trigger { position: fixed; bottom: 20px; left: 20px; width: 60px; height: 60px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10005; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        #chat-window { display: none; position: fixed; bottom: 90px; left: 20px; width: 320px; height: 450px; background: #000; border: 1px solid #333; border-radius: 15px; flex-direction: column; z-index: 10005; overflow: hidden; }
+        #chat-msgs { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .msg-ai { background: #222; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 0.85rem; max-width: 85%; }
+        .msg-user { background: #fff; color: #000; padding: 10px; border-radius: 10px; align-self: flex-end; font-size: 0.85rem; max-width: 85%; }
+        .chat-input-area { padding: 10px; border-top: 1px solid #333; display: flex; background: #111; gap: 5px; }
+        .chat-input-area input { flex: 1; background: transparent; border: 1px solid #333 !important; color: #fff; padding: 8px; border-radius: 5px; outline: none; }
+        .chat-input-area button { background: #fff; color: #000; border: none; padding: 8px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -97,20 +90,15 @@
     <div class="scroll-trigger" id="scrollBtn"><div class="arrow-icon"></div></div>
 
     <section class="product-section sauv-t" id="sec1">
-        <div class="glow-center"></div>
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
             <img src="assets/sauvage-bottle.png" class="img-bottle">
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
-        <div class="row">
-            <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
-            <div class="txt-box"><h3>THE LEGENDARY DEPTH</h3><p>Sauvage Elixir is an extraordinary concentration, a masterpiece of wild freshness.</p></div>
-        </div>
         <div class="purchase-area">
             <div style="flex:1">
-                <div class="size-container" style="display:flex; gap:10px;">
+                <div style="display:flex; gap:10px;">
                     <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML</div>
                     <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML</div>
                 </div>
@@ -121,28 +109,29 @@
         </div>
     </section>
 
-    <div id="chat-trigger-final" style="position: fixed; bottom: 20px; left: 20px; width: 60px; height: 60px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10005; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" width="30">
-    </div>
-
-    <div id="chat-box-final" style="display: none; position: fixed; bottom: 90px; left: 20px; width: 320px; height: 450px; background: #000; border: 1px solid #333; border-radius: 15px; flex-direction: column; z-index: 10005; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <div id="chat-trigger"><img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" width="30" style="filter: invert(1);"></div>
+    <div id="chat-window">
         <div style="background: #fff; color: #000; padding: 15px; font-weight: bold; display: flex; justify-content: space-between;">
             <span>VELOORIA AI</span>
-            <span id="close-chat-final" style="cursor: pointer;">✕</span>
+            <span id="close-chat" style="cursor: pointer;">✕</span>
         </div>
-        <div id="chat-msgs-final" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
-            <div style="background: #222; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 0.85rem;">أهلاً بك فـ Velooria! ✨ كيف نقدر نعاونك اليوم؟</div>
+        <div id="chat-msgs">
+            <div class="msg-ai">أهلاً بك فـ Velooria! ✨ كيف نقدر نعاونك؟</div>
         </div>
-        <div style="padding: 10px; border-top: 1px solid #333; display: flex; background: #111;">
-            <input id="chat-input-final" type="text" placeholder="كتب ميساج..." style="flex: 1; background: transparent; border: 1px solid #333 !important; color: #fff; padding: 8px; border-radius: 5px;">
-            <button id="send-btn-final" style="background: #fff; color: #000; margin-left: 5px; padding: 8px 15px; border-radius: 5px; font-weight: bold; cursor: pointer;">صيفط</button>
+        <div class="chat-input-area">
+            <input id="chat-input" type="text" placeholder="كتب ميساج...">
+            <button id="send-btn">صيفط</button>
         </div>
     </div>
 
     <script>
-        // 1. Logic of Sections & Scrolling
-        const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
-        const colors = ['#4A90E2', '#CD7F32', '#D4AF37', '#1a4d99'];
+        // Settings
+        const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awl";
+        const BOT_TOKEN = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
+        const CHAT_ID = "7635707772";
+
+        // 1. Scrolling Logic
+        const sections = ['sec1']; // ضيف sec2, sec3... هنا
         let currentIdx = 0;
 
         window.addEventListener('scroll', () => {
@@ -150,10 +139,6 @@
                 const rect = document.getElementById(id).getBoundingClientRect();
                 if(rect.top >= -window.innerHeight/2 && rect.top <= window.innerHeight/2) {
                     currentIdx = index;
-                    document.documentElement.style.setProperty('--current-arrow-color', colors[index]);
-                    const arrow = document.querySelector('.arrow-icon');
-                    if(index === sections.length - 1) arrow.classList.add('arrow-up');
-                    else arrow.classList.remove('arrow-up');
                 }
             });
         });
@@ -171,46 +156,45 @@
         }
 
         // 2. Chatbot Logic
-        const API_KEY = "AIzaSyDNR5p5cQYntUfOBM4ox9E_th2ZNWJ0awl";
-        const trigger = document.getElementById('chat-trigger-final');
-        const box = document.getElementById('chat-box-final');
-        const close = document.getElementById('close-chat-final');
-        const input = document.getElementById('chat-input-final');
-        const send = document.getElementById('send-btn-final');
-        const msgs = document.getElementById('chat-msgs-final');
+        const trigger = document.getElementById('chat-trigger');
+        const windowChat = document.getElementById('chat-window');
+        const input = document.getElementById('chat-input');
+        const send = document.getElementById('send-btn');
+        const msgs = document.getElementById('chat-msgs');
 
-        trigger.onclick = () => box.style.display = box.style.display === 'none' ? 'flex' : 'none';
-        close.onclick = () => box.style.display = 'none';
+        trigger.onclick = () => windowChat.style.display = windowChat.style.display === 'none' ? 'flex' : 'none';
+        document.getElementById('close-chat').onclick = () => windowChat.style.display = 'none';
 
-        async function getAIResponse(userText) {
-            const system = "أنت مساعد مبيعات في متجر Velooria للعطور. جاوب بالدارجة المغربية فقط. كن مؤدب ومقنع.";
+        async function getAI(text) {
             try {
                 const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ contents: [{ parts: [{ text: system + "\nUser: " + userText }] }] })
+                    body: JSON.stringify({ contents: [{ parts: [{ text: "أنت بائع عطور في متجر Velooria. جاوب بالدارجة المغربية فقط باختصار.\nUser: " + text }] }] })
                 });
                 const d = await r.json();
                 return d.candidates[0].content.parts[0].text;
-            } catch(e) { return "سمح ليا وقع مشكل، عاود صيفط الميساج."; }
+            } catch(e) { return "وقع مشكل فالاتصال، عاود صيفط."; }
         }
 
         send.onclick = async () => {
-            const text = input.value.trim();
-            if(!text) return;
+            const val = input.value.trim();
+            if(!val) return;
 
-            msgs.innerHTML += `<div style="background: #fff; color: #000; padding: 10px; border-radius: 10px; align-self: flex-end; font-size: 0.85rem;">${text}</div>`;
+            msgs.innerHTML += `<div class="msg-user">${val}</div>`;
             input.value = "";
             
-            const wait = document.createElement('div');
-            wait.innerText = "جاري الرد...";
-            msgs.appendChild(wait);
-            
-            const aiRes = await getAIResponse(text);
-            wait.remove();
-            
-            msgs.innerHTML += `<div style="background: #222; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 0.85rem;">${aiRes}</div>`;
+            const aiMsg = await getAI(val);
+            msgs.innerHTML += `<div class="msg-ai">${aiMsg}</div>`;
             msgs.scrollTop = msgs.scrollHeight;
+
+            if (/(06|07|05)\d{8}/.test(val)) {
+                fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ chat_id: CHAT_ID, text: `💬 ميساج جديد فيه رقم: ${val}` })
+                });
+            }
         };
     </script>
 </body>
