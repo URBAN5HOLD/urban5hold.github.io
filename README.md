@@ -308,48 +308,91 @@ a[href*="veloriabeauty.github.io"] {
 
 <img src="assets/cat.gif" id="interactive-cat" alt="Veloria Cat">
 
+<style>
+  #interactive-cat {
+    position: fixed;
+    width: 100px;
+    z-index: 9999;
+    cursor: pointer;
+    /* حيدنا الـ transition العادي باش نتحكمو بالفيزياء يدويًا */
+    pointer-events: auto;
+    transform-origin: bottom center;
+  }
+</style>
+
+<img src="assets/cat.gif" id="interactive-cat" alt="Veloria Cat">
+
 <script>
   const cat = document.getElementById('interactive-cat');
-  // كود كيقلب على صورة العطر Sauvage
   const perfume = document.getElementById('perfume-img');
-  const allTexts = document.querySelectorAll('h1, h2, p'); 
 
-  function catLogic() {
-    const rand = Math.random();
+  let posX = window.innerWidth - 150;
+  let posY = window.innerHeight - 150;
+  let vx = 0; // السرعة الأفقية
+  let vy = 0; // السرعة العمودية
+  let gravity = 0.8; // قوة الجاذبية
+  let friction = 0.9; // الاحتكاك (باش يوقف مابقاش يزلق)
+  let targetX = posX;
+  let targetY = posY;
 
-    if (rand < 0.4 && perfume) {
-        // ينقز فوق العطر ويخدشو
-        const rect = perfume.getBoundingClientRect();
-        cat.style.left = (rect.left + (rect.width / 4)) + 'px';
-        cat.style.top = (rect.top - 20) + 'px';
-        cat.classList.add('attacking');
-        setTimeout(() => cat.classList.remove('attacking'), 1500);
+  function updatePhysics() {
+    // تطبيق الجاذبية
+    vy += gravity;
+    
+    // تحريك القط بناءً على السرعة
+    posX += vx;
+    posY += vy;
 
-    } else if (rand < 0.7 && allTexts.length > 0) {
-        // يتمشى فوق الكلمات ديال السيت
-        const targetText = allTexts[Math.floor(Math.random() * allTexts.length)];
-        const rect = targetText.getBoundingClientRect();
-        cat.style.left = rect.left + 'px';
-        cat.style.top = (rect.top - 40) + 'px';
-    } else {
-        // يدور عشوائياً فالبلايص الخاويين
-        cat.style.left = Math.random() * (window.innerWidth - 120) + 'px';
-        cat.style.top = Math.random() * (window.innerHeight - 120) + 'px';
+    // حواف الشاشة (الأرضية)
+    if (posY > window.innerHeight - 110) {
+      posY = window.innerHeight - 110;
+      vy *= -0.3; // ارتداد خفيف ملي كيقيس الأرض
+      vx *= friction;
     }
+
+    // حواف الشاشة (الجوانب)
+    if (posX > window.innerWidth - 100) posX = window.innerWidth - 100;
+    if (posX < 0) posX = 0;
+
+    // تطبيق المواقع على العنصر
+    cat.style.left = posX + 'px';
+    cat.style.top = posY + 'px';
+
+    // دوران خفيف حسب السرعة (باش يبان واقعي)
+    cat.style.transform = `rotate(${vx * 2}deg)`;
+
+    requestAnimationFrame(updatePhysics);
   }
 
-  // القط كيتحرك كل 4 ثواني
-  setInterval(catLogic, 4000);
+  // دالة القفز نحو الهدف (العطر أو مكان عشوائي)
+  function jumpTo(targetX, targetY) {
+    const dx = targetX - posX;
+    const dy = targetY - posY;
+    
+    // حساب القوة المحتاجة للقفزة
+    vx = dx * 0.05;
+    vy = -Math.sqrt(Math.abs(dy) * 2) - 5; // قفزة للأعلى
+  }
 
-  // الهروب السريع بمجرد ما يقرب ليه الماوس
-  cat.addEventListener('mouseover', () => {
-    cat.style.transition = "all 0.4s ease-out"; 
-    cat.style.left = Math.random() * (window.innerWidth - 120) + 'px';
-    cat.style.top = Math.random() * (window.innerHeight - 120) + 'px';
-    setTimeout(() => { 
-        cat.style.transition = "all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)"; 
-    }, 500);
+  // ذكاء القط: يقرر فين ينقز
+  setInterval(() => {
+    const rand = Math.random();
+    if (rand < 0.5 && perfume) {
+      const rect = perfume.getBoundingClientRect();
+      jumpTo(rect.left, rect.top - 50);
+    } else {
+      jumpTo(Math.random() * window.innerWidth, window.innerHeight - 150);
+    }
+  }, 5000);
+
+  // الهروب عند لمس الماوس
+  cat.addEventListener('mouseenter', () => {
+    vx = (Math.random() - 0.5) * 40; // هربة سريعة للجنب
+    vy = -20; // قفزة عالية ديال الخلعة
   });
+
+  // البدء
+  updatePhysics();
 </script>
   const cat = document.getElementById('interactive-cat');
   const perfume = document.getElementById('perfume-img');
