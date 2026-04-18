@@ -769,7 +769,7 @@
 
 <script>
     // هاد الرابط هو اللي كيربط الموقع بـ Gemini اللي قاديتي في Google Script
-    const scriptURL = "https://script.google.com/macros/s/AKfyc bzLLH3fksyvAytPcHzzwhxHJmAxL3i-PAolNa_owBFUCdNiHTDB5oU8mzAtJxcJPMGw/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzLLH3fksyvAytPcHzzwhxHJmAxL3i-PAolNa_owBFUCdNiHTDB5oU8mzAtJxcJPMGw/exec";
 
     function toggleVeloriaChat() {
         const win = document.getElementById('chat-window');
