@@ -286,23 +286,70 @@ a[href*="veloriabeauty.github.io"] {
 <style>
   #interactive-cat {
     position: fixed;
-    width: 120px; /* تقدر تصغر أو تكبر القط من هنا */
+    width: 100px;
     z-index: 9999;
     cursor: pointer;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    bottom: 50px;
-    right: 50px;
+    /* حركة انسيابية بحال القفزة */
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: auto;
   }
-  .scared {
-    transform: scale(0.3) rotate(20deg);
-    opacity: 0.2;
-    filter: blur(2px);
+  
+  /* أنيماشين ملي يوقف فوق العطر (تأثير الخدش) */
+  @keyframes scratch {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-10deg) scale(1.1); }
+    75% { transform: rotate(10deg) scale(1.1); }
+    100% { transform: rotate(0); }
   }
+  .attacking { animation: scratch 0.5s infinite; }
 </style>
 
-<img src="assets/cat.gif" id="interactive-cat" alt="Veloria Cat">
-
 <script>
+  const cat = document.getElementById('interactive-cat');
+  const perfume = document.getElementById('perfume-img');
+  const allTexts = document.querySelectorAll('p, h1, h2'); // كاع الكلمات اللي فالسيت
+
+  function catAction() {
+    // اختار حركة عشوائية: يا إما يمشي للعطر، يا إما لشي كلمة، يا إما بلاصة عشوائية
+    const rand = Math.random();
+
+    if (rand < 0.4 && perfume) {
+        // هجوم على العطر
+        const rect = perfume.getBoundingClientRect();
+        cat.style.left = (rect.left + Math.random() * 50) + 'px';
+        cat.style.top = (rect.top - 40) + 'px';
+        cat.classList.add('attacking');
+        setTimeout(() => cat.classList.remove('attacking'), 2000);
+
+    } else if (rand < 0.7 && allTexts.length > 0) {
+        // ينقز فوق شي كلمة عشوائية فالسيت
+        const randomText = allTexts[Math.floor(Math.random() * allTexts.length)];
+        const rect = randomText.getBoundingClientRect();
+        cat.style.left = rect.left + 'px';
+        cat.style.top = (rect.top - 50) + 'px';
+
+    } else {
+        // حركة عشوائية حرة
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        cat.style.left = x + 'px';
+        cat.style.top = y + 'px';
+    }
+  }
+
+  // تنفيذ الحركة كل 4 ثواني (باش يبان نشيط)
+  setInterval(catAction, 4000);
+
+  // الهروب السريع ملي يقرب ليه الفار (الماوس)
+  cat.addEventListener('mouseover', () => {
+    cat.style.transition = "all 0.4s ease-out"; // هروب سريع
+    cat.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+    cat.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+    
+    // يرجع للحركة المنظمة بعد الهروب
+    setTimeout(() => { cat.style.transition = "all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)"; }, 500);
+  });
+</script>
   const cat = document.getElementById('interactive-cat');
   // هنا خاصك تآكد بلي صورة العطر عندها id="perfume-img"
   const perfume = document.getElementById('perfume-img') || document.querySelector('img');
