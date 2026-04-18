@@ -61,7 +61,7 @@ a[href*="veloriabeauty.github.io"] {
         <div class="glow-center"></div>
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
-            <img src="assets/sauvage-bottle.png" class="img-bottle">
+            <img src="sauvage-bottle.png" id="perfume-img" alt="Sauvage">
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
@@ -300,7 +300,7 @@ a[href*="veloriabeauty.github.io"] {
   }
 </style>
 
-<img src="cat.gif" id="interactive-cat" alt="Veloria Cat">
+<img src="assets/cat.gif" id="interactive-cat" alt="Veloria Cat">
 
 <script>
   const cat = document.getElementById('interactive-cat');
