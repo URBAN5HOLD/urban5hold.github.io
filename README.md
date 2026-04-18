@@ -286,25 +286,71 @@ a[href*="veloriabeauty.github.io"] {
 <style>
   #interactive-cat {
     position: fixed;
-    width: 100px;
+    width: 110px; /* حجم القط */
     z-index: 9999;
     cursor: pointer;
-    /* حركة انسيابية بحال القفزة */
+    /* السر فـ هاد السطر هو اللي كيعطي القفزة الانسيابية */
     transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    bottom: 50px;
+    right: 50px;
     pointer-events: auto;
   }
   
-  /* أنيماشين ملي يوقف فوق العطر (تأثير الخدش) */
+  /* تأثير "الخدش" ملي يوقف فوق العطر */
   @keyframes scratch {
     0% { transform: rotate(0); }
-    25% { transform: rotate(-10deg) scale(1.1); }
-    75% { transform: rotate(10deg) scale(1.1); }
+    25% { transform: rotate(-10deg) scale(1.05); }
+    75% { transform: rotate(10deg) scale(1.05); }
     100% { transform: rotate(0); }
   }
-  .attacking { animation: scratch 0.5s infinite; }
+  .attacking { animation: scratch 0.3s infinite; }
 </style>
 
+<img src="assets/cat.gif" id="interactive-cat" alt="Veloria Cat">
+
 <script>
+  const cat = document.getElementById('interactive-cat');
+  // كود كيقلب على صورة العطر Sauvage
+  const perfume = document.getElementById('perfume-img');
+  const allTexts = document.querySelectorAll('h1, h2, p'); 
+
+  function catLogic() {
+    const rand = Math.random();
+
+    if (rand < 0.4 && perfume) {
+        // ينقز فوق العطر ويخدشو
+        const rect = perfume.getBoundingClientRect();
+        cat.style.left = (rect.left + (rect.width / 4)) + 'px';
+        cat.style.top = (rect.top - 20) + 'px';
+        cat.classList.add('attacking');
+        setTimeout(() => cat.classList.remove('attacking'), 1500);
+
+    } else if (rand < 0.7 && allTexts.length > 0) {
+        // يتمشى فوق الكلمات ديال السيت
+        const targetText = allTexts[Math.floor(Math.random() * allTexts.length)];
+        const rect = targetText.getBoundingClientRect();
+        cat.style.left = rect.left + 'px';
+        cat.style.top = (rect.top - 40) + 'px';
+    } else {
+        // يدور عشوائياً فالبلايص الخاويين
+        cat.style.left = Math.random() * (window.innerWidth - 120) + 'px';
+        cat.style.top = Math.random() * (window.innerHeight - 120) + 'px';
+    }
+  }
+
+  // القط كيتحرك كل 4 ثواني
+  setInterval(catLogic, 4000);
+
+  // الهروب السريع بمجرد ما يقرب ليه الماوس
+  cat.addEventListener('mouseover', () => {
+    cat.style.transition = "all 0.4s ease-out"; 
+    cat.style.left = Math.random() * (window.innerWidth - 120) + 'px';
+    cat.style.top = Math.random() * (window.innerHeight - 120) + 'px';
+    setTimeout(() => { 
+        cat.style.transition = "all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)"; 
+    }, 500);
+  });
+</script>
   const cat = document.getElementById('interactive-cat');
   const perfume = document.getElementById('perfume-img');
   const allTexts = document.querySelectorAll('p, h1, h2'); // كاع الكلمات اللي فالسيت
