@@ -32,9 +32,30 @@
         .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; position: relative; padding-bottom: 80px; background-color: #000 !important; }
         .glow-center { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 75%) !important; opacity: 0.3; z-index: 0; pointer-events: none; }
         .v-header { width: 100%; position: relative; z-index: 1; line-height: 0; }
+
+
+.bg-v {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* هادي كتحافظ على جودة الفيديو بلا ما يتجبد */
+    display: block;
+}
         .bg-v { width: 100%; height: auto; display: block; }
-        .bottle-center { text-align: center; padding: 40px 0; position: relative; z-index: 2; }
-        .img-bottle { width: 32%; max-width: 130px; margin: 0 auto; display: block; filter: drop-shadow(0 0 30px rgba(0,0,0,0.8)); }
+        .bottle-center {
+    text-align: center;
+    padding: 40px 0; /* نقصنا من 40px لـ 20px */
+    position: relative;
+    z-index: 2;
+    margin-top: -50px; /* هادي غادي تطلع القرعة شوية فوق الفيديو باش تعطي شكل Luxury */
+}
+       .img-bottle {
+    width: 65%; /* زدنا النسبة باش تولي عريضة كثر */
+    max-width: 400px; /* طلعنا هاد الرقم باش ما يحبسش القرعة فاش تبغي تكبر */
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 35px rgba(0,0,0,0.9)); /* زدنا الظل باش تولي القرعة عاطية للعين كثر */
+    transition: transform 0.3s ease;
+}
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
         .text-glow-free { position: relative; z-index: 2; padding: 25px; background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important; }
@@ -64,63 +85,10 @@ a[href*="veloriabeauty.github.io"] {
     display: none !important;
     visibility: hidden !important;
 }
-  <style>/* الكود الجديد لزر الواتساب - ثابت في أقصى اليمين لتحت */
-.whatsapp-luxury {
-    position: fixed !important; /* باش يبقى لاصق وخا يسكرولي الزبون */
-    bottom: 20px !important;    /* شحال بعيد على الحافة التحتانية */
-    right: 20px !important;     /* شحال بعيد على الحافة اليمنى */
-    z-index: 9999999 !important; /* قيمة خيالية باش يبان فوق الفيديو وفوق أي حاجة */
-    display: flex !important;
-    align-items: center;
-    gap: 10px;
-    background: rgba(0, 0, 0, 0.8) !important; /* خلفية غامقة باش يبان فوق ألوان الفيديو */
-    backdrop-filter: blur(10px);
-    padding: 12px 18px;
-    border-radius: 50px;
-    border: 1.5px solid #D4AF37 !important; /* إطار ذهبي واضح */
-    transition: 0.3s all ease-in-out;
-    cursor: pointer;
-    text-decoration: none !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* ضل باش يولي بارز */
-}
-
-.whatsapp-luxury:hover {
-    transform: scale(1.05);
-    background: #000 !important;
-}
-
-    .whatsapp-icon-gold {
-        width: 22px;
-        height: 22px;
-        fill: #D4AF37;
-    }
-
-    .whatsapp-text {
-        color: #fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 11px;
-        letter-spacing: 2px;
-        font-weight: 200;
-        text-transform: uppercase;
-    }
-
-    @media (max-width: 480px) {
-        .whatsapp-luxury {
-            bottom: 20px;
-            right: 20px;
-            padding: 8px 15px;
-        }
-        .whatsapp-text { font-size: 9px; }
-    }
-</style>
+    </style>
 </head>
 <body>
-<a href="https://wa.me/212691444558?text=Bonjour%20Velooria%2C%20je%20souhaite%20commander%20un%20parfum%20manuellement." target="_blank" class="whatsapp-luxury">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37">
-        </svg>
-    <span style="color: #fff; font-size: 12px; font-family: Montserrat;">WhatsApp</span>
-</a>
-   </body> 
+
     <div class="logo-fixed">VELOORIA</div>
     <div class="scroll-trigger" id="scrollBtn"><div class="arrow-icon"></div></div>
 
@@ -367,4 +335,6 @@ a[href*="veloriabeauty.github.io"] {
     },
   });
 </script>
+</body>
 </html>
+
