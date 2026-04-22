@@ -754,12 +754,7 @@
       },
     });
   </script>
-<script>
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.getElementById('cat-widget').style.opacity = "1";
-  }, 1500);
-});
-</script>
+
 </body>
 </html>
+
