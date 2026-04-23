@@ -284,7 +284,6 @@ a[href*="veloriabeauty.github.io"] {
     </script>
 <script type="module">
   import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
-
   Typebot.initBubble({
     typebot: "my-typebot-v5y1jji",
     previewMessage: { message: "مرحباً بيك! محتاجة مساعدة في اختيار عطر؟" },
